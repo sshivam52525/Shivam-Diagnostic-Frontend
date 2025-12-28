@@ -53,7 +53,7 @@ function DrawerAppBar() {
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0.4rem', position: 'relative' }}>
                 <Typography variant="h6" sx={{ my: 2 }}>
                     <NavLink to="/">
-                        <img className='w-[15rem] py-3' src="./src/assests/Logo.png" alt="Logo" />
+                        <img className='w-[15rem] py-3' src={Logo} alt="Logo" />
                     </NavLink>
                 </Typography>
                 <IconButton onClick={handleDrawerToggle} sx={{ position: 'absolute', right: '0.4rem' }}>
@@ -99,7 +99,7 @@ function DrawerAppBar() {
                             sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}
                         >
                             <NavLink to={'/'}>
-                                <img className='w-[20rem] py-3 cursor-pointer' src="./src/assests/Logo.png" alt="Logo" />
+                                <img className='w-[20rem] py-3 cursor-pointer' src={Logo} alt="Logo" />
                             </NavLink>
 
                         </Typography>
