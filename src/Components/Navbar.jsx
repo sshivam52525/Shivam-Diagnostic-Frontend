@@ -20,6 +20,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 import { NavLink } from 'react-router-dom';
+import Logo from '../assests/Logo.png'
 
 const navItems = [
     {
@@ -175,7 +176,7 @@ function DrawerAppBar() {
                         }}
                     >
                         <NavLink to="/">
-                            <img className='w-[60rem] sm:w-[50rem] ' src="./src/assests/Logo.png" alt="Logo" />
+                            <img className='w-[60rem] sm:w-[50rem] ' src={Logo} alt="Logo" />
                         </NavLink>
                     </Typography>
 
