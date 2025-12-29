@@ -31,8 +31,8 @@ const Services = () => {
                     Our Popular Clinical Pathology Laboratories Test Services
                 </h1>
                 <div className="flex flex-wrap mx-auto justify-center gap-6 mt-20">
-                    {services.map((s) => (
-                        <Card image={s.img} service={s.service} />
+                    {services.map((s, index) => (
+                        <Card key={index} image={s.img} service={s.service} />
                     ))}
                 </div>
             </div>

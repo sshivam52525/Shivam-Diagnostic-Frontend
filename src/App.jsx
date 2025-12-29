@@ -30,12 +30,7 @@ const App = () => {
             {
               path:'/contact',
               element:<Contact/>
-            },
-            {
-              path:'https://lab.flabslis.com/login',
-              element: null
-            },
-
+            }
           ]
         }
       ])

@@ -69,11 +69,13 @@ function DrawerAppBar() {
             <Divider />
             <List >
                 {navItems.map((item) => (
-                    <ListItem key={item.name} disablePadding>
-                        <ListItemButton component={NavLink} to={item.link} sx={{ textAlign: 'center' }} onClick={handleDrawerToggle}>
-                            <ListItemText primary={item.name} primaryTypographyProps={{ fontSize: '15px', fontWeight: '700', color: '#203550' }} />
-                        </ListItemButton>
-                    </ListItem>
+                     <NavLink to={item.link} key={item.name} style={{ textDecoration: 'none' }}>
+                        <ListItem disablePadding>
+                            <ListItemButton sx={{ textAlign: 'center' }} onClick={handleDrawerToggle}>
+                                <ListItemText primary={item.name} primaryTypographyProps={{ fontSize: '15px', fontWeight: '700', color: '#203550' }} />
+                            </ListItemButton>
+                        </ListItem>
+                    </NavLink>
                 ))}
             </List>
             <Box sx={{ marginTop: '1rem' }}>

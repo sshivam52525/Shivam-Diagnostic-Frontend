@@ -220,7 +220,7 @@ const Packages = () => {
 
             <Grid container spacing={4} justifyContent="center">
                 {packages.map((pkg, index) => (
-                    <Grid item key={index} xs={12} sm={6} md={4}>
+                    <Grid key={index} xs={12} sm={6} md={4}>
                         <PackageCard pkg={pkg} />
                     </Grid>
                 ))}
