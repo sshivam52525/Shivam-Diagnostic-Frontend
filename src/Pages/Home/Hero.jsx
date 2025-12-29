@@ -6,9 +6,12 @@ import Stack from '@mui/material/Stack';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import BG1 from '../../assests/HeroBg/heroBG1.webp';
 import BG2 from '../../assests/HeroBg/heroBG2.webp';
+import { useNavigate } from 'react-router-dom';
 
 
 const Hero = () => {
+
+    const navigate = useNavigate()
 
     return (
     
@@ -61,13 +64,16 @@ const Hero = () => {
                 }}
                 >
                     <Button variant="contained"
+                    onClick={()=>navigate('/packages')}
                         sx={{
                             '&:hover': {
                                 backgroundColor: 'rgb(78, 94, 124)',
                                 color: 'white',
                             },
                         }}
-                    >Contained</Button>
+                    >Our Packages
+                    </Button>
+                    <a href="tel:+919814719180">
                     <Button variant="contained"
                         sx={{
                             '&:hover': {
@@ -76,8 +82,9 @@ const Hero = () => {
                             },
                         }}
                     >
-                        Link
+                    Call Us
                     </Button>
+                    </a>
                 </Stack>
 
                 <Box sx={{
@@ -114,6 +121,7 @@ const Hero = () => {
 
                     <div className='flex items-start pl-[0.5rem]'>
 
+                        <a href="tel:+918146003632">
                         <Button variant="contained"
                             sx={{
                                 '&:hover': {
@@ -121,7 +129,10 @@ const Hero = () => {
                                     color: 'white',
                                 },
                             }}
-                        >Contained</Button>
+                        >
+                           Help & Support
+                        </Button>
+                        </a>
                     </div>
 
                 </Box>

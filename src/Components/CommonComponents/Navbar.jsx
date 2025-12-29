@@ -48,6 +48,14 @@ function DrawerAppBar() {
         setMobileOpen((prevState) => !prevState);
     };
 
+    const openWhatsapp = () => {
+        const phoneNumber = '919814719180'
+        const message = 'Hello, I would like to make an appointment.';
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+
+    }
+
     const drawer = (
         <Box sx={{ textAlign: 'center' }}>
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0.4rem', position: 'relative' }}>
@@ -69,7 +77,7 @@ function DrawerAppBar() {
             <Divider />
             <List >
                 {navItems.map((item) => (
-                     <NavLink to={item.link} key={item.name} style={{ textDecoration: 'none' }}>
+                    <NavLink to={item.link} key={item.name} style={{ textDecoration: 'none' }}>
                         <ListItem disablePadding>
                             <ListItemButton sx={{ textAlign: 'center' }} onClick={handleDrawerToggle}>
                                 <ListItemText primary={item.name} primaryTypographyProps={{ fontSize: '15px', fontWeight: '700', color: '#203550' }} />
@@ -79,7 +87,7 @@ function DrawerAppBar() {
                 ))}
             </List>
             <Box sx={{ marginTop: '1rem' }}>
-                <Button sx={{ color: 'white', backgroundColor: '#3A7D5F', paddingX: '2rem', paddingY: '0.9rem' }}>
+                <Button onClick={openWhatsapp} sx={{ color: 'white', backgroundColor: '#3A7D5F', paddingX: '2rem', paddingY: '0.9rem' }}>
                     Make A Appointment
                 </Button>
             </Box>
@@ -117,47 +125,53 @@ function DrawerAppBar() {
                             padding: { xs: '1rem', md: '0.5rem' }
                         }}>
 
-                            <div className='flex items-center '>
-                                <span className='outline-1 outline-offset-2 outline-[#DDE3E8] p-1 rounded-full'>
-                                    <WifiCalling3OutlinedIcon sx={{ color: '#203550' }} />
-                                </span>
-                                <div className='flex flex-col ml-2'>
-                                    <Typography variant="h8" sx={{ color: '#203550', fontSize: '13px' }}>
-                                        Phone
-                                    </Typography>
-                                    <Typography variant="h8" sx={{ color: '#203550', fontSize: '15px' }}>
-                                        +1 234 567 890
-                                    </Typography>
+                            <a href="tel:+919814719180" style={{ textDecoration: 'none' }}>
+                                <div className='flex items-center '>
+                                    <span className='outline-1 outline-offset-2 outline-[#DDE3E8] p-1 rounded-full'>
+                                        <WifiCalling3OutlinedIcon sx={{ color: '#203550' }} />
+                                    </span>
+                                    <div className='flex flex-col ml-2'>
+                                        <Typography variant="h8" sx={{ color: '#203550', fontSize: '13px' }}>
+                                            Call Us
+                                        </Typography>
+                                        <Typography variant="h8" sx={{ color: '#203550', fontSize: '15px' }}>
+                                            9814719180
+                                        </Typography>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div className='flex items-center '>
-                                <span className='outline-1 outline-offset-2 outline-[#DDE3E8] p-1 rounded-full'>
-                                    <EmailOutlinedIcon sx={{ color: '#203550' }} />
-                                </span>
-                                <div className='flex flex-col ml-2'>
-                                    <Typography variant="h8" sx={{ color: '#203550', fontSize: '13px' }}>
-                                        Email
-                                    </Typography>
-                                    <Typography variant="h8" sx={{ color: '#203550', fontSize: '15px' }}>
-                                        info@example.com
-                                    </Typography>
+                            <a href="mailto:shivamlab786@gmail.com" style={{ textDecoration: 'none' }}>
+                                <div className='flex items-center '>
+                                    <span className='outline-1 outline-offset-2 outline-[#DDE3E8] p-1 rounded-full'>
+                                        <EmailOutlinedIcon sx={{ color: '#203550' }} />
+                                    </span>
+                                    <div className='flex flex-col ml-2'>
+                                        <Typography variant="h8" sx={{ color: '#203550', fontSize: '13px' }}>
+                                            Email
+                                        </Typography>
+                                        <Typography variant="h8" sx={{ color: '#203550', fontSize: '15px' }}>
+                                            shivamlab786@gmail.com
+                                        </Typography>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div className='flex items-center '>
-                                <span className='outline-1 outline-offset-2 outline-[#DDE3E8] p-1 rounded-full'>
-                                    <LocationOnOutlinedIcon sx={{ color: '#203550' }} />
-                                </span>
-                                <div className='flex flex-col ml-2'>
-                                    <Typography variant="h8" sx={{ color: '#203550', fontSize: '13px' }}>
-                                        Address
-                                    </Typography>
-                                    <Typography variant="h8" sx={{ color: '#203550', fontSize: '15px' }}>
-                                        123 Main St, Anytown
-                                    </Typography>
+                            <a href="https://www.google.com/maps/search/?api=1&query=33/3,+New+Shimlapuri,+Ludhiana" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                                <div className='flex items-center '>
+                                    <span className='outline-1 outline-offset-2 outline-[#DDE3E8] p-1 rounded-full'>
+                                        <LocationOnOutlinedIcon sx={{ color: '#203550' }} />
+                                    </span>
+                                    <div className='flex flex-col ml-2'>
+                                        <Typography variant="h8" sx={{ color: '#203550', fontSize: '13px' }}>
+                                            Address
+                                        </Typography>
+                                        <Typography variant="h8" sx={{ color: '#203550', fontSize: '15px' }}>
+                                            33/3, New Shimlapuri, Ludhiana
+                                        </Typography>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </Box>
 
                     </Toolbar>
@@ -199,9 +213,11 @@ function DrawerAppBar() {
                                 display: { xs: 'none', md: 'block' },
                                 marginRight: { md: '1.3rem', lg: '0' },
                             }}>
-                                <Button sx={{ color: 'white', backgroundColor: '#3A7D5F', paddingX: '2rem', paddingY: '0.9rem' }}>
-                                    Make A Appointment
-                                </Button>
+                                
+                                    <Button onClick={openWhatsapp} sx={{ color: 'white', backgroundColor: '#3A7D5F', paddingX: '2rem', paddingY: '0.9rem' }}>
+                                        Make A Appointment
+                                    </Button>
+                                
                             </Box>
                         </div>
                     </div>

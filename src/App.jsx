@@ -4,6 +4,7 @@ import Home from './Pages/Home/Home.jsx'
 import About from './Pages/About.jsx'
 import Packages from './Pages/Packages.jsx'
 import Contact from './Pages/Contact.jsx'
+import ScrollToTop from './Components/ScrollToTop.jsx'
 import './App.css'
 
 

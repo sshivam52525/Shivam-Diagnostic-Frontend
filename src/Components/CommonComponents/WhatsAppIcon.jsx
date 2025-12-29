@@ -3,6 +3,13 @@ import { Fab } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const WhatsAppIconComponent = () => {
+    const openWhatsApp = () => {
+        const phoneNumber = '919814719180';
+        const message = 'Hello, I would like to make an appointment.';
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+    };
+
     return (
         <Fab
             color="primary"
@@ -18,6 +25,7 @@ const WhatsAppIconComponent = () => {
                 height: { xs: 56, md: 72 },
             }}
             aria-label="whatsapp"
+            onClick={openWhatsApp}
         >
             <WhatsAppIcon sx={{ fontSize: { xs: 24, md: 36 } }} />
         </Fab>
