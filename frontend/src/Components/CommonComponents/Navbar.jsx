@@ -20,7 +20,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 import { NavLink } from 'react-router-dom';
-import Logo from '../assests/Logo.png'
+import Logo from '../../assests/Logo.png'
 
 const navItems = [
     {

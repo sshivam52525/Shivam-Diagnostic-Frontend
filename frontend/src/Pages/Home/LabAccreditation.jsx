@@ -41,7 +41,7 @@ const LabAccreditation = () => {
                     gap: '2rem',
                     justifyContent: 'center',
                     alignItems: 'stretch',
-                    marginBottom: '4rem'
+                    marginBottom: '1rem'
                 }}>
                     {accreditations.map((accreditation, index) => (
                         <Card key={index} sx={{
@@ -72,7 +72,7 @@ const LabAccreditation = () => {
                 </Box>
 
                 {/* Our Commitment to Quality Section */}
-                <Box sx={{ backgroundColor: 'white', borderRadius: '1rem', padding: '3rem', textAlign: 'center', boxShadow: 3 }}>
+            {/*   <Box sx={{ backgroundColor: 'white', borderRadius: '1rem', padding: '3rem', textAlign: 'center', boxShadow: 3 }}>
                     <Typography variant="h3" component="h2" sx={{ fontWeight: 'bold', color: '#203550', marginBottom: '1.5rem' }}>
                         Beyond the Badges
                     </Typography>
@@ -82,7 +82,7 @@ const LabAccreditation = () => {
                     <Button variant="contained" size="large" sx={{ fontWeight: 'bold' }}>
                         View Our Certifications
                     </Button>
-                </Box>
+                </Box>   */}
             </Container>
         </Box>
     );

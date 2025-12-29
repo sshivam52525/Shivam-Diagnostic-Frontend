@@ -1,12 +1,13 @@
-import bg from '../../assests/Packages/third-package-shape.png'
+import bg from '../assests/Packages/third-package-shape.png'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { Button, Card, CardContent, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import CheckIcon from '@mui/icons-material/Check';
 import { useState } from 'react';
+import Wrapper from '../Components/Wrapper';
 
-const HomePackages = () => {
+const Packages = () => {
 
     const navigate = useNavigate();
 
@@ -48,65 +49,41 @@ const HomePackages = () => {
             description: 'Our most thorough health assessment, covering an extensive range of tests for a complete picture of your health.'
         },
         {
-            name: 'Premium Health Check',
-            price: '$249',
-            tests: 10,
+            name: 'Womens Wellness Package',
+            price: '$199',
+            tests: 8,
             features: [
-                'All Standard Features',
-                'Thyroid Function Test',
-                'Vitamin D & B12 Test',
-                'Cardiac Risk Markers',
+                'All Basic Features',
+                'Pap Smear',
+                'Mammogram',
+                'Hormone Level Test',
             ],
-            description: 'Our most thorough health assessment, covering an extensive range of tests for a complete picture of your health.'
+            description: 'A comprehensive package designed to address the specific health needs of women, including cancer screenings.'
         },
         {
-            name: 'Premium Health Check',
-            price: '$249',
-            tests: 10,
+            name: 'Mens Health Package',
+            price: '$199',
+            tests: 8,
             features: [
-                'All Standard Features',
-                'Thyroid Function Test',
-                'Vitamin D & B12 Test',
-                'Cardiac Risk Markers',
+                'All Basic Features',
+                'Prostate-Specific Antigen (PSA) Test',
+                'Testosterone Level Test',
+                'Cardiac Stress Test',
             ],
-            description: 'Our most thorough health assessment, covering an extensive range of tests for a complete picture of your health.'
+            description: 'A focused health check-up for men, including prostate cancer screening and heart health evaluation.'
         },
         {
-            name: 'Premium Health Check',
-            price: '$249',
-            tests: 10,
+            name: 'Senior Citizen Package',
+            price: '$179',
+            tests: 9,
             features: [
                 'All Standard Features',
-                'Thyroid Function Test',
-                'Vitamin D & B12 Test',
-                'Cardiac Risk Markers',
+                'Bone Density Test',
+                'Arthritis Screening',
+                'Vision and Hearing Test',
             ],
-            description: 'Our most thorough health assessment, covering an extensive range of tests for a complete picture of your health.'
-        },
-        {
-            name: 'Premium Health Check',
-            price: '$249',
-            tests: 10,
-            features: [
-                'All Standard Features',
-                'Thyroid Function Test',
-                'Vitamin D & B12 Test',
-                'Cardiac Risk Markers',
-            ],
-            description: 'Our most thorough health assessment, covering an extensive range of tests for a complete picture of your health.'
-        },
-        {
-            name: 'Premium Health Check',
-            price: '$249',
-            tests: 10,
-            features: [
-                'All Standard Features',
-                'Thyroid Function Test',
-                'Vitamin D & B12 Test',
-                'Cardiac Risk Markers',
-            ],
-            description: 'Our most thorough health assessment, covering an extensive range of tests for a complete picture of your health.'
-        },
+            description: 'A specialized package for seniors to monitor age-related health issues and maintain a good quality of life.'
+        }
     ];
 
     const PackageCard = ({ pkg }) => {
@@ -212,12 +189,13 @@ const HomePackages = () => {
     }
 
     return (
+        <Wrapper>
         <Box sx={{
             backgroundImage: `url(${bg})`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            minHeight: '80vh',
+            minHeight: '100vh',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -240,30 +218,16 @@ const HomePackages = () => {
                 We offer a variety of health packages to suit your needs. Choose from our basic to comprehensive packages for a full health check-up.
             </Typography>
 
-            <Grid container spacing={4} justifyContent="center" sx={{ marginBottom: '3rem' }}>
+            <Grid container spacing={4} justifyContent="center">
                 {packages.map((pkg, index) => (
                     <Grid item key={index} xs={12} sm={6} md={4}>
                         <PackageCard pkg={pkg} />
                     </Grid>
                 ))}
             </Grid>
-
-            <Button
-                variant="contained"
-                onClick={() => navigate('/packages')}
-                sx={{
-                    fontWeight: 'bold',
-                    padding: '0.8rem 1.5rem',
-                    '&:hover': {
-                        backgroundColor: 'rgb(78, 94, 124)',
-                        color: 'white',
-                    },
-                }}
-            >
-                More Packages
-            </Button>
         </Box>
+        </Wrapper>
     )
 }
 
-export default HomePackages;
+export default Packages;
