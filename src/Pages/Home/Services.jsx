@@ -1,21 +1,25 @@
 import Wrapper from "../../Components/Wrapper"
 import Button from '@mui/material/Button';
+import img1 from '../../assests/Services/service1.png'
+import img2 from '../../assests/Services/service2.png'
+import img3 from '../../assests/Services/service3.png'
+
 
 const services = [
     {
-        img: "./src/assests/Services/service1.png",
+        img: img1,
         service: 'All Routine Laboratory Services'
     },
     {
-        img: "./src/assests/Services/service2.png",
+        img: img2,
         service: 'Microbiology & Disease Services'
     },
     {
-        img: "./src/assests/Services/service3.png",
+        img: img3,
         service: 'Molecular and Genetic Services'
     },
     {
-        img: "./src/assests/Services/service3.png",
+        img: img3,
         service: 'Immunology & Allergy Services'
     },
 ]

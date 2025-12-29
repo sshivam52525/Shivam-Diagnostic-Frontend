@@ -21,7 +21,6 @@ const Other = () => {
 
     return (
         <Wrapper>
-            <div>
                 <div className=" mx-4 ">
                     <Box
                         sx={{
@@ -85,8 +84,8 @@ const Other = () => {
                         <Box sx={{
                             display: 'grid',
                             gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' },
-                            gap: '1rem',
-                            marginTop: '2rem',
+                            gap: '2rem',
+                            marginTop: '1rem',
                         }}>
                             <Task text="Advanced Technology" />
                             <Task text="Expert Team" />
@@ -111,8 +110,6 @@ const Other = () => {
                         </Box>
                     </Box>
                 </Box>
-            </div>
-
         </Wrapper>
     )
 }

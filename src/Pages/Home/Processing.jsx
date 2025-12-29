@@ -31,7 +31,7 @@ const steps = [
 
 const Processing = () => {
     return (
-        <Box sx={{ py: 8, backgroundColor: '#f9f9f9' }}>
+        <Box sx={{ backgroundColor: '#f9f9f9',marginTop:'2rem' }}>
             <Container maxWidth="xl">
                 <Typography variant="h2" component="h1" gutterBottom textAlign="center" sx={{ fontWeight: 'bold' }}>
                     Our Sample Processing Workflow

@@ -4,6 +4,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import BG1 from '../../assests/HeroBg/heroBG1.webp';
+import BG2 from '../../assests/HeroBg/heroBG2.webp';
 
 
 const Hero = () => {
@@ -13,7 +15,7 @@ const Hero = () => {
         <div className='flex flex-col lg:flex-row gap-[1rem] relative'>
             <Box
                 sx={{
-                    backgroundImage: "url(./src/assests/HeroBg/heroBG1.webp)",
+                    backgroundImage: "url(" + BG1 + ")",
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                     width: { xs: '100%', md: '60%' },
@@ -142,7 +144,7 @@ const Hero = () => {
                     borderRadius: '25px',
                 }}
             >
-                <img className='rounded-3xl ' src="./src/assests/HeroBg/heroBG2.webp" alt="" />
+                <img className='rounded-3xl ' src={BG2} alt="" />
             </Box>
         </div>
        
