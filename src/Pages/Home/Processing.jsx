@@ -33,7 +33,7 @@ const Processing = () => {
     return (
         <Box sx={{ backgroundColor: '#f9f9f9',marginTop:'2rem' }}>
             <Container maxWidth="xl">
-                <Typography variant="h2" component="h1" gutterBottom textAlign="center" sx={{ fontWeight: 'bold' }}>
+                <Typography variant="h2" component="h1" gutterBottom textAlign="center" sx={{ fontWeight: 'bold', paddingTop:'3rem' }}>
                     Our Sample Processing Workflow
                 </Typography>
                 <Typography variant="h6" color="text.secondary" textAlign="center" sx={{ mb: 6 }}>

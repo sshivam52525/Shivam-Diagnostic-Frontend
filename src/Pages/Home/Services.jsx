@@ -40,8 +40,8 @@ const Services = () => {
                     ))}
                 </div>
             </div>
-
         </Wrapper>
+
     )
 }
 

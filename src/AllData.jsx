@@ -9,7 +9,7 @@ import ScrollToTopButton from './Components/CommonComponents/ScrollToTopButton.j
 const AllData = () => {
     return (
         <>
-            <ScrollToTop />
+           <ScrollToTop />
             <DrawerAllDataBar />
             <Outlet />
             <Footer/>

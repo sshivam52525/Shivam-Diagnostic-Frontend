@@ -24,8 +24,9 @@ const Other = () => {
     }
 
     return (
+    
         <Wrapper>
-            <div className=" mx-4 ">
+            <div className=" mx-4 pt-10">
                 <Box
                     sx={{
                         width: '100%',
@@ -34,9 +35,10 @@ const Other = () => {
                         alignItems: "center",
                         color: "white",
                         textAlign: "center",
-                        paddingTop: '2rem',
+                        paddingTop: '0.7rem',
                         gap: '2rem',
                         borderRadius: '25px',
+                    
                     }}
                 >
                     <Typography variant="h2" component="h1" gutterBottom
@@ -66,7 +68,8 @@ const Other = () => {
                 flexDirection: { xs: 'column', md: 'row' },
                 gap: '2rem',
                 padding: '1rem',
-                alignItems: 'center'
+                alignItems: 'center',
+                paddingBottom:'5rem'
             }}>
                 <Box sx={{
                     width: { xs: '100%', md: '50%' },
@@ -115,7 +118,8 @@ const Other = () => {
                     </Box>
                 </Box>
             </Box>
-        </Wrapper>
+            </Wrapper>
+        
     )
 }
 
