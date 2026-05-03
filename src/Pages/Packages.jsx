@@ -13,88 +13,100 @@ const Packages = () => {
 
     const packages = [
         {
-            name: 'Basic Health Check',
-            price: '$99',
-            tests: 4,
+            name: 'HemoCure Basic Health Check',
+            price: '499',
+            testCode: "HC 1.0",
             features: [
-                'Complete Blood Count',
-                'Urine Analysis',
-                'Blood Sugar Test',
-                'Cholesterol Test',
+                'Hemogram',
+                'Lipid Profile',
+                'Liver Function Test',
+                'Kidney Function Test',
+                'Uric Acid',
+                'Calcium'
             ],
             description: 'A foundational health screening to assess your general well-being and detect common health issues early.'
         },
         {
-            name: 'Standard Health Check',
-            price: '$149',
-            tests: 7,
+            name: 'HemoCure Standard Health Check',
+            price: '799',
+            testCode: "HC 1.1",
             features: [
-                'All Basic Features',
-                'Kidney Function Test',
+                'Hemogram + ESR',
+                'Lipid Profile',
                 'Liver Function Test',
-                'ECG (Electrocardiogram)',
+                'Kidney Function Test',
+                'Uric Acid',
+                'Calcium',
+                'Thyroid Profile'
             ],
             description: 'A comprehensive evaluation of your vital organs, including heart, kidneys, and liver, for a deeper health insight.'
         },
         {
-            name: 'Premium Health Check',
-            price: '$249',
-            tests: 10,
+            name: 'HemoCure Premium Health Check',
+            price: '1199',
+            testCode: "HC 1.2",
             features: [
-                'All Standard Features',
-                'Thyroid Function Test',
-                'Vitamin D & B12 Test',
-                'Cardiac Risk Markers',
+                'Hemogram + ESR',
+                'Lipid Profile',
+                'Liver Function Test',
+                'Kidney Function Test',
+                'Uric Acid',
+                'Calcium',
+                'Thyroid Profile',
+                'HbA1c',
+                'Iron Profile'
             ],
             description: 'Our most thorough health assessment, covering an extensive range of tests for a complete picture of your health.'
         },
         {
-            name: 'Womens Wellness Package',
-            price: '$199',
-            tests: 8,
+            name: 'Hemocure Premium Health Check + Vitamins',
+            price: '1499',
+            testCode: "HC 1.3",
             features: [
-                'All Basic Features',
-                'Pap Smear',
-                'Mammogram',
-                'Hormone Level Test',
+                'Hemogram + ESR',
+                'Lipid Profile',
+                'Liver Function Test',
+                'Kidney Function Test',
+                'Uric Acid',
+                'Calcium',
+                'Thyroid Profile',
+                'HbA1c',
+                'Iron Profile',
+                'Vitamin B12',
+                'Vitamin D'
             ],
             description: 'A comprehensive package designed to address the specific health needs of women, including cancer screenings.'
         },
         {
-            name: 'Mens Health Package',
-            price: '$199',
-            tests: 8,
+            name: 'HemoCure Advance Health Check',
+            price: '1999',
+            testCode: "HC 1.5",
             features: [
-                'All Basic Features',
-                'Prostate-Specific Antigen (PSA) Test',
-                'Testosterone Level Test',
-                'Cardiac Stress Test',
+                'Hemogram + ESR',
+                'Lipid Profile',
+                'Liver Function Test',
+                'Kidney Function Test',
+                'Uric Acid',
+                'Calcium',
+                'Thyroid Profile',
+                'HbA1c',
+                'Iron Profile',
+                'Vitamin B12',
+                'Vitamin D',
+                'CRP Quantitative',
+                'RA Quantitative'
             ],
             description: 'A focused health check-up for men, including prostate cancer screening and heart health evaluation.'
         },
-        {
-            name: 'Senior Citizen Package',
-            price: '$179',
-            tests: 9,
-            features: [
-                'All Standard Features',
-                'Bone Density Test',
-                'Arthritis Screening',
-                'Vision and Hearing Test',
-            ],
-            description: 'A specialized package for seniors to monitor age-related health issues and maintain a good quality of life.'
-        }
+        
     ];
 
     const PackageCard = ({ pkg }) => {
-        const [isHovered, setIsHovered] = useState(false);
 
         return (
             <Card
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
+
                 sx={{
-                    position: 'relative',
                     borderRadius: '1rem',
                     boxShadow: 3,
                     transition: 'all 0.3s ease-in-out',
@@ -102,30 +114,52 @@ const Packages = () => {
                         boxShadow: 6,
                         transform: 'scale(1.03)'
                     },
-                    overflow: 'hidden' // important for the overlay effect
+                    overflow: 'hidden', // important for the overlay effect
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between'
                 }}
             >
                 {/* Original Card Content */}
-                <CardContent sx={{ padding: '2rem' }}>
-                    <Typography variant="h5" component="div" sx={{ fontWeight: 'bold', color: '#203550', marginBottom: '1rem', textAlign: 'center' }}>
+                <CardContent sx={{
+                    padding: '2rem',
+
+                }}>
+                    <Typography variant="h5" component="div" sx={{ fontWeight: 'bold', 
+                        color: '#203550', 
+                        marginBottom: '1rem',
+                         textAlign: 'center',
+                         width:{xs: "16rem", md:'20rem'},
+                         
+                         }}>
                         {pkg.name}
                     </Typography>
                     <Box sx={{ marginBottom: '1.5rem', textAlign: 'center' }}>
                         <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#3A7D5F' }}>
-                            {pkg.price}
+                            Rs. {pkg.price}/-
                         </Typography>
                         <Typography variant="subtitle1" sx={{ fontWeight: 'bold', color: 'rgb(78, 94, 124)' }}>
-                            Includes {pkg.tests} Tests
+                            TestCode : {pkg.testCode}
                         </Typography>
                     </Box>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
                         {pkg.features.map((feature, index) => (
-                            <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <Box key={index} sx={{ display: 'flex', gap: '0.5rem' }}>
                                 <CheckIcon sx={{ color: '#3A7D5F' }} />
-                                <Typography sx={{ color: 'rgb(78, 94, 124)' }}>{feature}</Typography>
+                                <Typography sx={{
+                                    color: 'rgb(78, 94, 124)',
+                                    
+                                }}>{feature}</Typography>
                             </Box>
                         ))}
                     </Box>
+                </CardContent>
+
+                <Box
+                    sx={{
+                        paddingX: '2rem'
+                    }}
+                >
                     <Button
                         variant="contained"
                         fullWidth
@@ -134,51 +168,9 @@ const Packages = () => {
                             padding: '0.8rem',
                             backgroundColor: '#3A7D5F',
                             '&:hover': {
-                                backgroundColor: '#203550',
+                                backgroundColor: '#203550'
                             },
-                        }}
-                    >
-                        Book Now
-                    </Button>
-                </CardContent>
-
-                {/* Hover Overlay with Details */}
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: 'rgba(248, 250, 252, 0.97)', // slate-50 with opacity
-                        color: '#203550',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        padding: '2rem',
-                        textAlign: 'center',
-                        opacity: isHovered ? 1 : 0,
-                        transform: isHovered ? 'translateY(0)' : 'translateY(100%)',
-                        transition: 'all 0.4s ease-in-out',
-                    }}
-                >
-                    <Typography variant="h5" component="div" sx={{ fontWeight: 'bold', marginBottom: '1rem' }}>
-                        {pkg.name}
-                    </Typography>
-                    <Typography sx={{ marginBottom: '1.5rem', color: 'rgb(78, 94, 124)' }}>
-                        {pkg.description}
-                    </Typography>
-                    <Button
-                        variant="contained"
-                        onClick={() => navigate('/booking')}
-                        sx={{
-                            fontWeight: 'bold',
-                            padding: '0.8rem 1.5rem',
-                            backgroundColor: '#3A7D5F',
-                            '&:hover': {
-                                backgroundColor: '#203550',
-                            },
+                            marginBottom: 3
                         }}
                     >
                         Book Now
@@ -190,42 +182,42 @@ const Packages = () => {
 
     return (
         <Wrapper>
-        <Box sx={{
-            backgroundImage: `url(${bg})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            minHeight: '100vh',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            textAlign: 'center',
-            padding: '4rem 2rem',
-            backgroundColor: '#f8fafc'
-        }}>
-            <Typography variant="h2" component="h1" gutterBottom sx={{
-                color: '#203550',
-                fontWeight: 'bold'
+            <Box sx={{
+                backgroundImage: `url(${bg})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                minHeight: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                padding: '4rem 2rem',
+                backgroundColor: '#f8fafc'
             }}>
-                Our Health Packages
-            </Typography>
-            <Typography variant="h6" sx={{
-                color: 'rgb(78, 94, 124)',
-                maxWidth: '600px',
-                marginBottom: '3rem'
-            }}>
-                We offer a variety of health packages to suit your needs. Choose from our basic to comprehensive packages for a full health check-up.
-            </Typography>
+                <Typography variant="h2" component="h1" gutterBottom sx={{
+                    color: '#203550',
+                    fontWeight: 'bold'
+                }}>
+                    Our Health Packages
+                </Typography>
+                <Typography variant="h6" sx={{
+                    color: 'rgb(78, 94, 124)',
+                    maxWidth: '600px',
+                    marginBottom: '3rem'
+                }}>
+                    We offer a variety of health packages to suit your needs. Choose from our basic to comprehensive packages for a full health check-up.
+                </Typography>
 
-            <Grid container spacing={4} justifyContent="center">
-                {packages.map((pkg, index) => (
-                    <Grid key={index} xs={12} sm={6} md={4}>
-                        <PackageCard pkg={pkg} />
-                    </Grid>
-                ))}
-            </Grid>
-        </Box>
+                <Grid container spacing={4} justifyContent="center">
+                    {packages.map((pkg, index) => (
+                        <Grid key={index} xs={12} sm={6} md={4}>
+                            <PackageCard pkg={pkg} />
+                        </Grid>
+                    ))}
+                </Grid>
+            </Box>
         </Wrapper>
     )
 }

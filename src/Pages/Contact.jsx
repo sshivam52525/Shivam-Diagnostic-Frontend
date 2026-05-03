@@ -25,31 +25,34 @@ const Contact = () => {
                     <Box className="info-item" sx={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', justifyContent: { xs: 'center', md: 'flex-start' } }}>
                         <LocationOnIcon sx={{ color: '#203550', marginRight: '1rem' }} />
                         <Typography variant="body1" sx={{ color: '#203550' }}>
-                            123 Healthway Avenue, Suite 456, Meditown, USA
+                            33/3, New Shimlapuri, Ludhiana, Punjab 141003.
                         </Typography>
                     </Box>
                     <Box className="info-item" sx={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', justifyContent: { xs: 'center', md: 'flex-start' } }}>
                         <WifiCalling3Outlined sx={{ color: '#203550', marginRight: '1rem' }} />
                         <Typography variant="body1" sx={{ color: '#203550' }}>
-                            +1 234 567 890
+                            +91 98147-19180
                         </Typography>
                     </Box>
                     <Box className="info-item" sx={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', justifyContent: { xs: 'center', md: 'flex-start' } }}>
                         <EmailOutlined sx={{ color: '#203550', marginRight: '1rem' }} />
                         <Typography variant="body1" sx={{ color: '#203550' }}>
-                            contact@example.com
+                        shivamlab786@gmail.com
                         </Typography>
                     </Box>
                 </Box>
                 <Box className="contact-map" sx={{ width: { xs: '100%', sm: '80%', md: '600px' }, maxWidth: '600px' }}>
+                    
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.225824025184!2d-122.4194155846813!3d37.77492927975871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064a2798e65%3A0x28a881d3a58b8d4e!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1639556312560!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3425.1864008962393!2d75.87331907779539!3d30.853455874526347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a829f501e2ea5%3A0x956ac49b3ee098cf!2sShivam%20Diagnostic%20Laboratory!5e0!3m2!1sen!2sin!4v1777639250586!5m2!1sen!2sin"
                         width="100%"
                         height="450"
-                        style={{ border: 0, borderRadius: '15px' }}
-                        allowFullScreen=""
+                        style={{border:0, borderRadius:'15px'}}
+                        allowfullscreen=""
                         loading="lazy"
-                    ></iframe>
+                        referrerpolicy="no-referrer-when-downgrade">
+
+                    </iframe>
                 </Box>
             </Box>
         </Wrapper>

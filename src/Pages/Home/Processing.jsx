@@ -19,7 +19,7 @@ const steps = [
     },
     {
         title: '3. Analysis & Reporting',
-        description: 'Our certified scientists conduct a thorough analysis, utilizing cutting-edge technology to generate detailed and precise reports for the insights you need.',
+        description: 'Our experienced employee conduct a thorough analysis, utiilizing cutting-edge technology to generate detailed and precise reports for the insights you need.',
         icon: <AnalyticsIcon sx={{ fontSize: 60, color: '#3A7D5F' }} />
     },
     {

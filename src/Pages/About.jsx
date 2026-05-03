@@ -6,22 +6,22 @@ import Wrapper from '../Components/Wrapper';
 
 const teamMembers = [
     {
-        name: 'Dr. Emily Carter',
-        role: 'Founder & Chief Medical Officer',
+        name: 'Mr. Sandeep Singh',
+        role: 'Founder & Director',
         avatar: image1,
-        bio: 'Dr. Carter has over 20 years of experience in internal medicine and is passionate about preventive healthcare.',
+        bio :'Mr. Sandeep Singh (B.Sc. MLT), Director of Shivam Diagnostic Laboratory, has over 15 years of experience in medical laboratory technology and is committed to delivering accurate and reliable diagnostic results.',
     },
     {
-        name: 'John Doe',
-        role: 'Lab Director',
+        name: 'Mr. Shivam Singh',
+        role: 'Lab Manager & Administrator',
         avatar: image2,
-        bio: 'John is a certified clinical laboratory scientist with a focus on quality assurance and technological innovation.',
+        bio: 'Mr. Shivam Singh (D. Pharmacy), Lab Manager at Shivam Diagnostic Laboratory, has 6 years of experience and manages lab operations along with IT systems to ensure accurate and timely reporting.',
     },
     {
-        name: 'Jane Smith',
-        role: 'Head of Patient Care',
+        name: 'Mrs. Reena',
+        role: 'Assistant Director & Receptionist',
         avatar: image3,
-        bio: 'Jane has a background in nursing and is dedicated to providing a compassionate and seamless patient experience.',
+        bio: 'Ms. Reena is the Receptionist at Shivam Diagnostic Laboratory, assisting patients with registration, appointments, and inquiries with professionalism and care.',
     },
 ];
 
@@ -96,11 +96,13 @@ const About = () => {
                     {teamMembers.map((member) => (
                         <Grid item xs={12} sm={6} md={4} key={member.name}>
                             <Box sx={{ textAlign: 'center' }}>
-                                <Avatar
-                                    alt={member.name}
-                                    src={member.avatar}
+                              <Avatar
+                                
+                                    src="/broken-image.jpg"
                                     sx={{ width: 120, height: 120, margin: '0 auto 1rem' }}
                                 />
+                                
+                            {/*}    <Avatar src="/broken-image.jpg" />. */}
                                 <Typography variant="h6" fontWeight="bold">{member.name}</Typography>
                                 <Typography variant="subtitle1" color="primary.main" sx={{color: '#3A7D5F'}}>{member.role}</Typography>
                                 <Typography variant="body2" sx={{ mt: 1, color: 'rgb(78, 94, 124)' }}>{member.bio}</Typography>

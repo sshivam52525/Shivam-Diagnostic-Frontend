@@ -43,15 +43,15 @@ const Footer = () => {
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
               <LocationOnIcon sx={{ mr: 1 }} />
-              <Typography variant="body2">123 Health St, Wellness City, 45678</Typography>
+              <Typography variant="body2">33/3, New Shimlapuri, Ludhiana, Punjab 141003</Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
               <PhoneIcon sx={{ mr: 1 }} />
-              <Typography variant="body2">(123) 456-7890</Typography>
+              <Typography variant="body2">+91 81460-03632, +91 76965-19180</Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               <EmailIcon sx={{ mr: 1 }} />
-              <Typography variant="body2">contact@yourcompany.com</Typography>
+              <Typography variant="body2">shivamlab786@gmailcom</Typography>
             </Box>
           </Grid>
           <Grid item xs={12} sm={6} md={3}>

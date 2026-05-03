@@ -12,53 +12,51 @@ const HomePackages = () => {
 
     const packages = [
         {
-            name: 'Basic Health Check',
-            price: '$99',
-            tests: 4,
+            name: 'HemoCure Basic Health Check',
+            price: '499',
+            testCode: "HC 1.0",
             features: [
-                'Complete Blood Count',
-                'Urine Analysis',
-                'Blood Sugar Test',
-                'Cholesterol Test',
+                'Hemogram',
+                'Lipid Profile',
+                'Liver Function Test',
+                'Kidney Function Test',
+                'Uric Acid',
+                'Calcium'
             ],
             description: 'A foundational health screening to assess your general well-being and detect common health issues early.'
         },
         {
-            name: 'Standard Health Check',
-            price: '$149',
-            tests: 7,
+            name: 'HemoCure Standard Health Check',
+            price: '799',
+            testCode: "HC 1.1",
             features: [
-                'All Basic Features',
-                'Kidney Function Test',
+                'Hemogram + ESR',
+                'Lipid Profile',
                 'Liver Function Test',
-                'ECG (Electrocardiogram)',
+                'Kidney Function Test',
+                'Uric Acid',
+                'Calcium',
+                'Thyroid Profile'
             ],
             description: 'A comprehensive evaluation of your vital organs, including heart, kidneys, and liver, for a deeper health insight.'
         },
         {
-            name: 'Premium Health Check',
-            price: '$249',
-            tests: 10,
+            name: 'HemoCure Premium Health Check',
+            price: '1199',
+            testCode: "HC 1.2",
             features: [
-                'All Standard Features',
-                'Thyroid Function Test',
-                'Vitamin D & B12 Test',
-                'Cardiac Risk Markers',
+                'Hemogram + ESR',
+                'Lipid Profile',
+                'Liver Function Test',
+                'Kidney Function Test',
+                'Uric Acid',
+                'Calcium',
+                'Thyroid Profile',
+                'HbA1c',
+                'Iron Profile'
             ],
             description: 'Our most thorough health assessment, covering an extensive range of tests for a complete picture of your health.'
         },
-        {
-            name: 'Premium Health Check',
-            price: '$249',
-            tests: 10,
-            features: [
-                'All Standard Features',
-                'Thyroid Function Test',
-                'Vitamin D & B12 Test',
-                'Cardiac Risk Markers',
-            ],
-            description: 'Our most thorough health assessment, covering an extensive range of tests for a complete picture of your health.'
-        }
     ];
 
     const PackageCard = ({ pkg }) => {
@@ -66,8 +64,7 @@ const HomePackages = () => {
 
         return (
             <Card
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
+                
                 sx={{
                     position: 'relative',
                     borderRadius: '1rem',
@@ -87,7 +84,7 @@ const HomePackages = () => {
                     </Typography>
                     <Box sx={{ marginBottom: '1.5rem', textAlign: 'center' }}>
                         <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#3A7D5F' }}>
-                            {pkg.price}
+                            Rs. {pkg.price}/-
                         </Typography>
                         <Typography variant="subtitle1" sx={{ fontWeight: 'bold', color: 'rgb(78, 94, 124)' }}>
                             Includes {pkg.tests} Tests

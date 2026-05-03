@@ -38,6 +38,10 @@ const navItems = [
     {
         name: 'Contact',
         link: '/contact'
+    },
+    {
+        name:'LogIn',
+        link:'/login'
     }
 ];
 
@@ -106,7 +110,10 @@ function DrawerAppBar() {
                         <Typography
                             variant="h6"
                             component="div"
-                            sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}
+                            sx={{
+                                 display: { xs: 'none', sm: 'none', md: 'block' },
+                    
+                        }}
                         >
                             <NavLink to={'/'}>
                                 <img className='w-[20rem] py-3 cursor-pointer' src={Logo} alt="Logo" />
