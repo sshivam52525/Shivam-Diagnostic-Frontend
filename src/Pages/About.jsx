@@ -56,7 +56,7 @@ const About = () => {
                         py: { xs: 6, md: 10 }
                     }}>
                     <Grid container spacing={2}>
-                        <Grid size={{ xs: 12, md: 6 }}>
+                        <Grid item xs={12} md={6}>
                             <Paper
                                 sx={{
                                     p: 2,
@@ -74,7 +74,7 @@ const About = () => {
                             </Paper>
                         </Grid>
 
-                        <Grid size={{ xs: 12, md: 6 }}>
+                        <Grid item xs={12} md={6}>
                             <Paper
                                 sx={{
                                     p: 2,
@@ -178,7 +178,7 @@ const About = () => {
                         }}
                     >
                         {teamMembers.map((member) => (
-                            <Grid size={{ xs: 12, md: 6 }} key={member.name}>
+                            <Grid item xs={12} md={6} key={member.name}>
                                 <Paper
                                     sx={{
                                         p: 2
@@ -186,11 +186,10 @@ const About = () => {
                                 >
                                     <Box sx={{ textAlign: 'center', minHeight: 300 }}>
                                         <Avatar
-                                            src="/broken-image.jpg"
+                                            src={member.avatar}
+                                            alt={member.name}
                                             sx={{ width: 120, height: 120, margin: '0 auto 1rem' }}
                                         />
-
-                                        {/*}    <Avatar src="/broken-image.jpg" />. */}
                                         <Typography variant="h6" fontWeight="bold">{member.name}</Typography>
                                         <Typography variant="subtitle1" color="primary.main" sx={{ color: '#3A7D5F' }}>{member.role}</Typography>
                                         <Typography variant="body2" sx={{ mt: 1, color: 'rgb(78, 94, 124)' }}>{member.bio}</Typography>
