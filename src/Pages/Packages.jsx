@@ -117,7 +117,8 @@ const Packages = () => {
                     overflow: 'hidden', // important for the overlay effect
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'space-between'
+                    justifyContent: 'space-between',
+                    minHeight:{xs:0,md:750}
                 }}
             >
                 {/* Original Card Content */}
@@ -212,7 +213,9 @@ const Packages = () => {
 
                 <Grid container spacing={4} justifyContent="center">
                     {packages.map((pkg, index) => (
-                        <Grid key={index} xs={12} sm={6} md={4}>
+                        <Grid key={index} xs={12} sm={6} md={4} 
+                        
+                        >
                             <PackageCard pkg={pkg} />
                         </Grid>
                     ))}

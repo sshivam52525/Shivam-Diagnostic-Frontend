@@ -103,7 +103,8 @@ function DrawerAppBar() {
             <CssBaseline />
             <AppBar component="nav" sx={{
                 backgroundColor: '#FFFFFF',
-                position: { xs: "static" }
+               position: { sm: "static" },
+            
             }}>
                 <Container >
                     <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
@@ -112,6 +113,7 @@ function DrawerAppBar() {
                             component="div"
                             sx={{
                                  display: { xs: 'none', sm: 'none', md: 'block' },
+                                 
                     
                         }}
                         >
@@ -124,12 +126,13 @@ function DrawerAppBar() {
 
 
                         <Box sx={{
-                            display: 'flex',
+                            display: { xs:'none', sm:'flex'},
                             flexDirection: { xs: 'column', md: 'row' },
                             alignItems: { xs: 'start', sm: 'start', md: 'center' },
                             justifyContent: 'center',
-                            gap: { xs: '1rem', sm: '1.5rem', md: '1.2rem', lg: '1.5rem' },
-                            padding: { xs: '1rem', md: '0.5rem' }
+                            gap: { sm: '1.5rem', md: '1.2rem', lg: '1.5rem' },
+                            padding: { md: '0.5rem' },
+                            
                         }}>
 
                             <a href="tel:+919814719180" style={{ textDecoration: 'none' }}>
