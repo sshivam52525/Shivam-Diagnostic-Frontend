@@ -20,6 +20,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 import { NavLink } from 'react-router-dom';
+import HemoCure from '../../assests/HemoCure.jpg'
 import Logo from '../../assests/Logo.png'
 
 const navItems = [
@@ -40,8 +41,8 @@ const navItems = [
         link: '/contact'
     },
     {
-        name:'LogIn',
-        link:'/login'
+        name: 'LogIn',
+        link: '/login'
     }
 ];
 
@@ -65,7 +66,7 @@ function DrawerAppBar() {
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0.4rem', position: 'relative' }}>
                 <Typography variant="h6" sx={{ my: 2 }}>
                     <NavLink to="/">
-                        <img className='w-[15rem] py-3' src={Logo} alt="Logo" />
+                        <img className='w-[20rem] py-3 cursor-pointer' src={HemoCure} alt="LOGO" />
                     </NavLink>
                 </Typography>
                 <IconButton onClick={handleDrawerToggle} sx={{ position: 'absolute', right: '0.4rem' }}>
@@ -103,8 +104,8 @@ function DrawerAppBar() {
             <CssBaseline />
             <AppBar component="nav" sx={{
                 backgroundColor: '#FFFFFF',
-               position: { sm: "static" },
-            
+                position: { sm: "static" },
+
             }}>
                 <Container >
                     <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
@@ -112,13 +113,13 @@ function DrawerAppBar() {
                             variant="h6"
                             component="div"
                             sx={{
-                                 display: { xs: 'none', sm: 'none', md: 'block' },
-                                 
-                    
-                        }}
+                                display: { xs: 'none', sm: 'none', md: 'block' },
+
+
+                            }}
                         >
                             <NavLink to={'/'}>
-                                <img className='w-[20rem] py-3 cursor-pointer' src={Logo} alt="Logo" />
+                                <img className='w-[20rem] py-3 cursor-pointer' src={HemoCure} alt="LOGO" />
                             </NavLink>
 
                         </Typography>
@@ -126,16 +127,17 @@ function DrawerAppBar() {
 
 
                         <Box sx={{
-                            display: { xs:'none', sm:'flex'},
+                            display: { xs: 'none', sm: 'flex' },
                             flexDirection: { xs: 'column', md: 'row' },
                             alignItems: { xs: 'start', sm: 'start', md: 'center' },
                             justifyContent: 'center',
                             gap: { sm: '1.5rem', md: '1.2rem', lg: '1.5rem' },
                             padding: { md: '0.5rem' },
-                            
+                            marginTop: '3rem',
+                            marginLeft: '0.5rem'
                         }}>
 
-                            <a href="tel:+919814719180" style={{ textDecoration: 'none' }}>
+                            <a href="tel:+918146003632" style={{ textDecoration: 'none' }}>
                                 <div className='flex items-center '>
                                     <span className='outline-1 outline-offset-2 outline-[#DDE3E8] p-1 rounded-full'>
                                         <WifiCalling3OutlinedIcon sx={{ color: '#203550' }} />
@@ -145,13 +147,13 @@ function DrawerAppBar() {
                                             Call Us
                                         </Typography>
                                         <Typography variant="h8" sx={{ color: '#203550', fontSize: '15px' }}>
-                                            9814719180
+                                            8146003632
                                         </Typography>
                                     </div>
                                 </div>
                             </a>
 
-                            <a href="mailto:shivamlab786@gmail.com" style={{ textDecoration: 'none' }}>
+                            <a href="mailto:hemocurelabs@gmail.com" style={{ textDecoration: 'none' }}>
                                 <div className='flex items-center '>
                                     <span className='outline-1 outline-offset-2 outline-[#DDE3E8] p-1 rounded-full'>
                                         <EmailOutlinedIcon sx={{ color: '#203550' }} />
@@ -161,13 +163,13 @@ function DrawerAppBar() {
                                             Email
                                         </Typography>
                                         <Typography variant="h8" sx={{ color: '#203550', fontSize: '15px' }}>
-                                            shivamlab786@gmail.com
+                                            hemocurelabs@gmail.com
                                         </Typography>
                                     </div>
                                 </div>
                             </a>
 
-                            <a href="https://www.google.com/maps/search/?api=1&query=33/3,+New+Shimlapuri,+Ludhiana" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                            <a href="https://www.google.com/maps/place/HemoCure+Diagnostic+and+Solutions+Pvt.+Ltd./@30.8508911,75.8744448,17z/data=!4m6!3m5!1s0x391a83d13ff8f64b:0x458b756eabb6a21e!8m2!3d30.8535061!4d75.8758709!16s%2Fg%2F11wp7x8t3r?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                                 <div className='flex items-center '>
                                     <span className='outline-1 outline-offset-2 outline-[#DDE3E8] p-1 rounded-full'>
                                         <LocationOnOutlinedIcon sx={{ color: '#203550' }} />
@@ -202,7 +204,7 @@ function DrawerAppBar() {
                         }}
                     >
                         <NavLink to="/">
-                            <img className='w-[60rem] sm:w-[50rem] ' src={Logo} alt="Logo" />
+                            <img className='w-[50rem] py-3 cursor-pointer' src={HemoCure} alt="LOGO" />
                         </NavLink>
                     </Typography>
 
@@ -223,11 +225,11 @@ function DrawerAppBar() {
                                 display: { xs: 'none', md: 'block' },
                                 marginRight: { md: '1.3rem', lg: '0' },
                             }}>
-                                
-                                    <Button onClick={openWhatsapp} sx={{ color: 'white', backgroundColor: '#3A7D5F', paddingX: '2rem', paddingY: '0.9rem' }}>
-                                        Make A Appointment
-                                    </Button>
-                                
+
+                                <Button onClick={openWhatsapp} sx={{ color: 'white', backgroundColor: '#3A7D5F', paddingX: '2rem', paddingY: '0.9rem' }}>
+                                    Make A Appointment
+                                </Button>
+
                             </Box>
                         </div>
                     </div>
