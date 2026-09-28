@@ -4,153 +4,133 @@ import Typography from '@mui/material/Typography';
 import { Button, Card, CardContent, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import CheckIcon from '@mui/icons-material/Check';
-import { useState } from 'react';
+import { packages as packageData } from '../Packages';
 
 const HomePackages = () => {
-
     const navigate = useNavigate();
-
-    const packages = [
-        {
-            name: 'HemoCure Basic Health Check',
-            price: '499',
-            testCode: "HC 1.0",
-            features: [
-                'Hemogram',
-                'Lipid Profile',
-                'Liver Function Test',
-                'Kidney Function Test',
-                'Uric Acid',
-                'Calcium'
-            ],
-            description: 'A foundational health screening to assess your general well-being and detect common health issues early.'
-        },
-        {
-            name: 'HemoCure Standard Health Check',
-            price: '799',
-            testCode: "HC 1.1",
-            features: [
-                'Hemogram + ESR',
-                'Lipid Profile',
-                'Liver Function Test',
-                'Kidney Function Test',
-                'Uric Acid',
-                'Calcium',
-                'Thyroid Profile'
-            ],
-            description: 'A comprehensive evaluation of your vital organs, including heart, kidneys, and liver, for a deeper health insight.'
-        },
-        {
-            name: 'HemoCure Premium Health Check',
-            price: '1199',
-            testCode: "HC 1.2",
-            features: [
-                'Hemogram + ESR',
-                'Lipid Profile',
-                'Liver Function Test',
-                'Kidney Function Test',
-                'Uric Acid',
-                'Calcium',
-                'Thyroid Profile',
-                'HbA1c',
-                'Iron Profile'
-            ],
-            description: 'Our most thorough health assessment, covering an extensive range of tests for a complete picture of your health.'
-        },
-    ];
+    const packages = packageData.slice(0, 3);
 
     const PackageCard = ({ pkg }) => {
-        const [isHovered, setIsHovered] = useState(false);
-
         return (
             <Card
-                
                 sx={{
-                    position: 'relative',
-                    borderRadius: '1rem',
-                    boxShadow: 3,
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    borderRadius: '1.25rem',
+                    border: '1px solid rgba(32, 53, 80, 0.08)',
+                    background: 'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(240,247,244,0.96) 100%)',
+                    boxShadow: '0 18px 38px rgba(32, 53, 80, 0.12)',
                     transition: 'all 0.3s ease-in-out',
+                    overflow: 'hidden',
                     '&:hover': {
-                        boxShadow: 6,
-                        transform: 'scale(1.03)'
-                    },
-                    overflow: 'hidden' // important for the overlay effect
+                        boxShadow: '0 24px 48px rgba(32, 53, 80, 0.18)',
+                        transform: 'translateY(-6px)'
+                    }
                 }}
             >
-                {/* Original Card Content */}
-                <CardContent sx={{ padding: '2rem' }}>
-                    <Typography variant="h5" component="div" sx={{ fontWeight: 'bold', color: '#203550', marginBottom: '1rem', textAlign: 'center' }}>
+                <CardContent sx={{
+                    px: { xs: 2, sm: 2.5 },
+                    py: { xs: 2.5, sm: 3 },
+                    display: 'flex',
+                    flexDirection: 'column',
+                    flex: 1
+                }}>
+                    <Box sx={{
+                        display: 'inline-flex',
+                        alignSelf: 'center',
+                        px: 1.5,
+                        py: 0.6,
+                        borderRadius: '999px',
+                        backgroundColor: 'rgba(58, 125, 95, 0.12)',
+                        color: '#3A7D5F',
+                        fontWeight: 700,
+                        fontSize: { xs: '0.7rem', sm: '0.8rem' },
+                        mb: 2
+                    }}>
+                        Most Popular
+                    </Box>
+
+                    <Typography variant="h5" component="div" sx={{
+                        fontWeight: 800,
+                        color: '#203550',
+                        textAlign: 'center',
+                        lineHeight: 1.35,
+                        minHeight: { xs: '4.5rem', sm: '5rem', md: '6rem' },
+                        fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.5rem' }
+                    }}>
                         {pkg.name}
                     </Typography>
-                    <Box sx={{ marginBottom: '1.5rem', textAlign: 'center' }}>
-                        <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#3A7D5F' }}>
+
+                    <Box sx={{
+                        my: 2.5,
+                        textAlign: 'center',
+                        background: 'linear-gradient(135deg, rgba(58,125,95,0.08), rgba(32,53,80,0.03))',
+                        borderRadius: '0.9rem',
+                        py: 1.5,
+                        px: 1
+                    }}>
+                        <Typography variant="h4" sx={{
+                            fontWeight: 800,
+                            color: '#3A7D5F',
+                            fontSize: { xs: '1.7rem', sm: '2.1rem', md: '2.3rem' }
+                        }}>
                             Rs. {pkg.price}/-
                         </Typography>
-                        <Typography variant="subtitle1" sx={{ fontWeight: 'bold', color: 'rgb(78, 94, 124)' }}>
-                            Includes {pkg.tests} Tests
-                        </Typography>
                     </Box>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
-                        {pkg.features.map((feature, index) => (
-                            <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                <CheckIcon sx={{ color: '#3A7D5F' }} />
-                                <Typography sx={{ color: 'rgb(78, 94, 124)' }}>{feature}</Typography>
+
+                    <Box sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 1.2,
+                        mb: 2,
+                        flex: 1
+                    }}>
+                        {pkg.features.slice(0, 5).map((feature, index) => (
+                            <Box key={index} sx={{
+                                display: 'flex',
+                                alignItems: 'flex-start',
+                                gap: 1,
+                                color: 'rgb(78, 94, 124)'
+                            }}>
+                                <CheckIcon sx={{
+                                    color: '#3A7D5F',
+                                    flexShrink: 0,
+                                    mt: '2px',
+                                    fontSize: { xs: '1rem', sm: '1.1rem' }
+                                }} />
+                                <Typography sx={{
+                                    color: 'rgb(78, 94, 124)',
+                                    fontSize: { xs: '0.9rem', sm: '0.95rem' },
+                                    fontWeight: 700,
+                                    lineHeight: 1.5,
+                                    wordBreak: 'break-word'
+                                }}>
+                                    {feature}
+                                </Typography>
                             </Box>
                         ))}
                     </Box>
+                </CardContent>
+
+                <Box sx={{ px: { xs: 2, sm: 2.5 }, pb: { xs: 2.5, sm: 3 } }}>
                     <Button
                         variant="contained"
                         fullWidth
+                        onClick={() => navigate('/packages')}
                         sx={{
-                            fontWeight: 'bold',
-                            padding: '0.8rem',
-                            backgroundColor: '#3A7D5F',
+                            fontWeight: 700,
+                            py: 1.15,
+                            borderRadius: '999px',
+                            background: 'linear-gradient(135deg, #3A7D5F 0%, #264A5D 100%)',
+                            textTransform: 'none',
+                            fontSize: { xs: '0.95rem', sm: '1rem' },
+                            boxShadow: 'none',
                             '&:hover': {
-                                backgroundColor: '#203550',
-                            },
-                        }}
-                    >
-                        Book Now
-                    </Button>
-                </CardContent>
-
-                {/* Hover Overlay with Details */}
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: 'rgba(248, 250, 252, 0.97)', // slate-50 with opacity
-                        color: '#203550',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        padding: '2rem',
-                        textAlign: 'center',
-                        opacity: isHovered ? 1 : 0,
-                        transform: isHovered ? 'translateY(0)' : 'translateY(100%)',
-                        transition: 'all 0.4s ease-in-out',
-                    }}
-                >
-                    <Typography variant="h5" component="div" sx={{ fontWeight: 'bold', marginBottom: '1rem' }}>
-                        {pkg.name}
-                    </Typography>
-                    <Typography sx={{ marginBottom: '1.5rem', color: 'rgb(78, 94, 124)' }}>
-                        {pkg.description}
-                    </Typography>
-                    <Button
-                        variant="contained"
-                        onClick={() => navigate('/booking')}
-                        sx={{
-                            fontWeight: 'bold',
-                            padding: '0.8rem 1.5rem',
-                            backgroundColor: '#3A7D5F',
-                            '&:hover': {
-                                backgroundColor: '#203550',
-                            },
+                                background: 'linear-gradient(135deg, #203550 0%, #3A7D5F 100%)',
+                                boxShadow: '0 10px 20px rgba(32, 53, 80, 0.18)'
+                            }
                         }}
                     >
                         Book Now
@@ -172,45 +152,56 @@ const HomePackages = () => {
             justifyContent: 'center',
             alignItems: 'center',
             textAlign: 'center',
-            padding: '4rem 2rem',
+            padding: { xs: '3rem 1rem', md: '4rem 2rem' },
             backgroundColor: '#f8fafc'
         }}>
-            <Typography variant="h2" component="h1" gutterBottom sx={{
-                color: '#203550',
-                fontWeight: 'bold'
-            }}>
-                Our Health Packages
-            </Typography>
-            <Typography variant="h6" sx={{
-                color: 'rgb(78, 94, 124)',
-                maxWidth: '600px',
-                marginBottom: '3rem'
-            }}>
-                We offer a variety of health packages to suit your needs. Choose from our basic to comprehensive packages for a full health check-up.
-            </Typography>
+            <Box sx={{ width: '100%', maxWidth: '1200px' }}>
+                <Typography variant="h2" component="h1" gutterBottom sx={{
+                    color: '#203550',
+                    fontWeight: 800,
+                    fontSize: { xs: '2.2rem', sm: '2.8rem', md: '4rem' },
+                    lineHeight: 1.12,
+                    mb: 1.5
+                }}>
+                    Our Health Packages
+                </Typography>
+                <Typography variant="h6" sx={{
+                    color: 'rgb(78, 94, 124)',
+                    maxWidth: '700px',
+                    margin: '0 auto 3rem auto',
+                    fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
+                    lineHeight: 1.7
+                }}>
+                    We offer a variety of health packages to suit your needs. Choose from our basic to comprehensive packages for a full health check-up.
+                </Typography>
 
-            <Grid container spacing={4} justifyContent="center" sx={{ marginBottom: '3rem' }}>
-                {packages.map((pkg, index) => (
-                    <Grid key={index} xs={12} sm={6} md={3}>
-                        <PackageCard pkg={pkg} />
-                    </Grid>
-                ))}
-            </Grid>
+                <Grid container spacing={{ xs: 2.5, md: 3.5 }} justifyContent="center" sx={{ marginBottom: '3rem' }}>
+                    {packages.map((pkg, index) => (
+                        <Grid item key={index} xs={12} sm={6} md={4}>
+                            <PackageCard pkg={pkg} />
+                        </Grid>
+                    ))}
+                </Grid>
 
-            <Button
-                variant="contained"
-                onClick={() => navigate('/packages')}
-                sx={{
-                    fontWeight: 'bold',
-                    padding: '0.8rem 1.5rem',
-                    '&:hover': {
-                        backgroundColor: 'rgb(78, 94, 124)',
-                        color: 'white',
-                    },
-                }}
-            >
-                More Packages
-            </Button>
+                <Button
+                    variant="contained"
+                    onClick={() => navigate('/packages')}
+                    sx={{
+                        fontWeight: 700,
+                        px: 3,
+                        py: 1.2,
+                        borderRadius: '999px',
+                        background: 'linear-gradient(135deg, #3A7D5F 0%, #264A5D 100%)',
+                        textTransform: 'none',
+                        '&:hover': {
+                            background: 'linear-gradient(135deg, #203550 0%, #3A7D5F 100%)',
+                            boxShadow: '0 12px 24px rgba(32,53,80,0.18)'
+                        }
+                    }}
+                >
+                    More Packages
+                </Button>
+            </Box>
         </Box>
     )
 }

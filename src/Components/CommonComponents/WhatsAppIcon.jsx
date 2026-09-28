@@ -4,7 +4,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const WhatsAppIconComponent = () => {
     const openWhatsApp = () => {
-        const phoneNumber = '919814719180';
+        const phoneNumber = '918146003632';
         const message = 'Hello, I would like to make an appointment.';
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');

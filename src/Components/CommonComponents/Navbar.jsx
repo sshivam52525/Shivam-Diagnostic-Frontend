@@ -54,7 +54,7 @@ function DrawerAppBar() {
     };
 
     const openWhatsapp = () => {
-        const phoneNumber = '919814719180'
+        const phoneNumber = '918146003632'
         const message = 'Hello, I would like to make an appointment.';
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
@@ -63,31 +63,55 @@ function DrawerAppBar() {
 
     const drawer = (
         <Box sx={{ textAlign: 'center' }}>
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0.4rem', position: 'relative' }}>
-                <Typography variant="h6" sx={{ my: 2 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: 1.5, py: 1.2, width: '100%' }}>
+                <Typography variant="h6" sx={{ my: 0, flex: 1, display: 'flex', justifyContent: 'center' }}>
                     <NavLink to="/">
-                        <img className='w-[20rem] py-3 cursor-pointer' src={HemoCure} alt="LOGO" />
+                        <img className='w-[11rem] sm:w-[14rem] py-2 cursor-pointer object-contain' src={HemoCure} alt="LOGO" />
                     </NavLink>
                 </Typography>
-                <IconButton onClick={handleDrawerToggle} sx={{ position: 'absolute', right: '0.4rem' }}>
+                <IconButton onClick={handleDrawerToggle} sx={{ p: 0.8, ml: 1, flexShrink: 0 }}>
                     <CloseIcon sx={{
                         color: '#203550',
                         fontSize: {
-                            xs: '2rem',
-                            sm: '2.5rem',
+                            xs: '1.8rem',
+                            sm: '2.2rem',
                         }
                     }} />
                 </IconButton>
             </Box>
             <Divider />
-            <List >
+            <List sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
                 {navItems.map((item) => (
-                    <NavLink to={item.link} key={item.name} style={{ textDecoration: 'none' }}>
-                        <ListItem disablePadding>
-                            <ListItemButton sx={{ textAlign: 'center' }} onClick={handleDrawerToggle}>
-                                <ListItemText primary={item.name} primaryTypographyProps={{ fontSize: '15px', fontWeight: '700', color: '#203550' }} />
-                            </ListItemButton>
-                        </ListItem>
+                    <NavLink
+                        key={item.name}
+                        to={item.link}
+                        style={{ textDecoration: 'none', width: '100%' }}
+                        end
+                    >
+                        {({ isActive }) => (
+                            <ListItem disablePadding sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                                <ListItemButton
+                                    onClick={handleDrawerToggle}
+                                    sx={{
+                                        color: isActive ? 'primary.main' : 'text.secondary',
+                                        backgroundColor: isActive ? 'action.selected' : 'transparent',
+                                        textAlign: 'center',
+                                        width: '100%',
+                                        maxWidth: '16rem',
+                                    }}
+                                >
+                                    <ListItemText
+                                        primary={item.name}
+                                        sx={{ textAlign: 'center' }}
+                                        primaryTypographyProps={{
+                                            fontSize: '15px',
+                                            fontWeight: '700',
+                                            color: '#203550',
+                                        }}
+                                    />
+                                </ListItemButton>
+                            </ListItem>
+                        )}
                     </NavLink>
                 ))}
             </List>
@@ -133,7 +157,7 @@ function DrawerAppBar() {
                             justifyContent: 'center',
                             gap: { sm: '1.5rem', md: '1.2rem', lg: '1.5rem' },
                             padding: { md: '0.5rem' },
-                            marginTop: '3rem',
+                            marginY: '1rem',
                             marginLeft: '0.5rem'
                         }}>
 
@@ -179,7 +203,7 @@ function DrawerAppBar() {
                                             Address
                                         </Typography>
                                         <Typography variant="h8" sx={{ color: '#203550', fontSize: '15px' }}>
-                                            33/3, New Shimlapuri, Ludhiana
+                                            33/3,New Shimlapuri,Ludhiana
                                         </Typography>
                                     </div>
                                 </div>
@@ -215,9 +239,31 @@ function DrawerAppBar() {
                             marginLeft: { md: '1.5rem', lg: '0' },
                         }}>
                             {navItems.map((item) => (
-                                <Button key={item.name} component={NavLink} to={item.link} sx={{ color: '#203550', fontSize: '15px', fontWeight: '700' }}>
-                                    {item.name}
-                                </Button>
+                                <NavLink
+                                    key={item.name}
+                                    to={item.link}
+                                    end
+                                    style={{ textDecoration: 'none' }}
+                                >
+                                    {({ isActive }) => (
+                                        <Button
+                                            sx={{
+                                                color: isActive ? '#203550' : '#203550',
+                                                backgroundColor: isActive ? '#eaf0f5' : 'transparent',
+                                                borderRadius: '999px',
+                                                px: 2,
+                                                py: 1,
+                                                fontSize: '15px',
+                                                fontWeight: '700',
+                                                '&:hover': {
+                                                    backgroundColor: isActive ? '#eaf0f5' : '#f5f7fa',
+                                                },
+                                            }}
+                                        >
+                                            {item.name}
+                                        </Button>
+                                    )}
+                                </NavLink>
                             ))}
                         </Box>
                         <div>

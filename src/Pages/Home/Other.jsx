@@ -26,55 +26,55 @@ const Other = () => {
     return (
     
         <Wrapper>
-            <div className=" mx-4 pt-10">
+            <Box sx={{ mx: 2, pt: { xs: 5, md: 8 } }}>
                 <Box
                     sx={{
                         width: '100%',
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        color: "white",
-                        textAlign: "center",
-                        paddingTop: '0.7rem',
-                        gap: '2rem',
+                        display: 'flex',
+                        flexDirection: { xs: 'column', md: 'row' },
+                        alignItems: { xs: 'flex-start', md: 'center' },
+                        justifyContent: 'space-between',
+                        gap: 2,
+                        color: 'white',
+                        textAlign: { xs: 'left', md: 'left' },
                         borderRadius: '25px',
-                    
                     }}
                 >
                     <Typography variant="h2" component="h1" gutterBottom
                         sx={{
-                            fontSize: { xs: "2.5rem", md: '3rem' },
-                            fontWeight: "bold",
-                            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
-                            color: "#203550",
-                            textAlign: 'start',
+                            fontSize: { xs: '2.1rem', sm: '2.6rem', md: '3rem' },
+                            fontWeight: 'bold',
+                            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+                            color: '#203550',
                             width: { xs: '100%', md: '75%' },
+                            lineHeight: 1.2,
                         }}
                     >
                         Empowering Healthcare with Reliable Accurate Diagnostics Our Commitment {' '}
-                        <span className="text-[#8A9AB8] text-shadow-none">
+                        <Box component="span" sx={{ display: 'inline-block', color: '#8A9AB8', textShadow: 'none' }}>
                             To Quality Precision and Patient-Centered Care
-                        </span>
+                        </Box>
                     </Typography>
 
-                    <Box>
-                        <img className="hidden  md:block  w-48 h-48" src={starShapeImage} alt="Star Shape Graphic" />
+                    <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                        <img className="w-48 h-48" src={starShapeImage} alt="Star Shape Graphic" />
                     </Box>
                 </Box>
-            </div>
+            </Box>
 
             <Box sx={{
                 display: 'flex',
                 flexDirection: { xs: 'column', md: 'row' },
                 gap: '2rem',
-                padding: '1rem',
+                px: { xs: 2, md: 4 },
                 alignItems: 'center',
-                paddingBottom:'5rem'
+                pb: { xs: 5, md: 8 },
+                pt: { xs: 2, md: 4 },
             }}>
                 <Box sx={{
                     width: { xs: '100%', md: '50%' },
                 }}>
-                    <img src={aboutImage} style={{ width: '100%', borderRadius: '15px' }} />
+                    <img src={aboutImage} style={{ width: '100%', borderRadius: '15px', display: 'block' }} alt="About the lab" />
                 </Box>
 
                 <Box sx={{
@@ -82,17 +82,18 @@ const Other = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
-                    alignItems: 'start',
+                    alignItems: 'flex-start',
                 }}>
-                    <Typography sx={{ color: '#203550', fontSize: { xs: '1rem', md: '1.2rem' } }}>
+                    <Typography sx={{ color: '#203550', fontSize: { xs: '1rem', md: '1.2rem' }, lineHeight: 1.7 }}>
                         We offer a comprehensive range of tests, from routine bloodwork and pathology to specialized molecular and genetic diagnostics, ensuring each patient receives the personalized insights they need.
                     </Typography>
 
                     <Box sx={{
                         display: 'grid',
-                        gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' },
-                        gap: '2rem',
-                        marginTop: '1rem',
+                        gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, minmax(0, 1fr))' },
+                        gap: '1.5rem',
+                        marginTop: '1.5rem',
+                        width: '100%',
                     }}>
                         <Task text="Advanced Technology" />
                         <Task text="Expert Team" />
@@ -118,7 +119,7 @@ const Other = () => {
                     </Box>
                 </Box>
             </Box>
-            </Wrapper>
+        </Wrapper>
         
     )
 }

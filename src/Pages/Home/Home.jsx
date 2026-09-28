@@ -16,7 +16,6 @@ const Home = () => {
             <Other />
             <Processing />
             <HomePackages/>
-            <Reviews/>
             <LabAccreditation/>
         </>
     )

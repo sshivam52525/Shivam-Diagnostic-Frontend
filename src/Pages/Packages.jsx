@@ -4,174 +4,262 @@ import Typography from '@mui/material/Typography';
 import { Button, Card, CardContent, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import CheckIcon from '@mui/icons-material/Check';
-import { useState } from 'react';
 import Wrapper from '../Components/Wrapper';
+
+export const packages = [
+        {
+            name: 'HemoCure Preventing Package',
+            price: 699,
+            features: [
+                'LIPID PROFILE',
+                'LIVER FUNCTION TEST',
+                'COMPLETE BLOOD COUNT (CBC)',
+                'KIDNEY FUNCTION TEST',
+                'BLOOD GLUCOSE FASTING'
+            ],
+        },
+        {
+            name: 'HemoCure Preventing Package - 1A',
+            price: 899,
+            features: [
+                'LIPID PROFILE',
+                'LIVER FUNCTION TEST',
+                'COMPLETE BLOOD COUNT (CBC)',
+                'KIDNEY FUNCTION TEST',
+                'BLOOD GLUCOSE FASTING',
+                'THYROID (TSH)'
+            ],
+        },
+        {
+            name: 'HemoCure Preventing Package - 1B',
+            price: 999,
+            features: [
+                'LIPID PROFILE',
+                'LIVER FUNCTION TEST',
+                'COMPLETE BLOOD COUNT (CBC)',
+                'KIDNEY FUNCTION TEST',
+                'BLOOD GLUCOSE FASTING',
+                'CALCIUM',
+                'THYROID PROFILE'
+            ],
+        },
+        {
+            name: 'HemoCure Preventing Package - 2',
+            price: 1199,
+            features: [
+                'LIPID PROFILE',
+                'LIVER FUNCTION TEST',
+                'COMPLETE BLOOD COUNT (CBC)',
+                'KIDNEY FUNCTION TEST',
+                'BLOOD GLUCOSE FASTING',
+                'CALCIUM',
+                'THYROID PROFILE',
+                'URINE ROUTING & MICROSCOPY',
+                'HbA1C'
+            ],
+        },
+        {
+            name: 'HemoCure Preventing Package - 3',
+            price: 1799,
+            features: [
+                'LIPID PROFILE',
+                'LIVER FUNCTION TEST',
+                'COMPLETE BLOOD COUNT (CBC)',
+                'KIDNEY FUNCTION TEST',
+                'BLOOD GLUCOSE FASTING',
+                'CALCIUM',
+                'HbA1C',
+                'URINE ROUTING & MICROSCOPY',
+                'VITAMIN D',
+                'VITAMIN B12 ',
+                'IRON PROFILE',
+                'THYROID PROFILE'
+            ],
+        },
+        {
+            name: 'HemoCure Advance Health Package',
+            price: 2199,
+            features: [
+                'LIPID PROFILE',
+                'LIVER FUNCTION TEST',
+                'COMPLETE BLOOD COUNT (CBC)',
+                'KIDNEY FUNCTION TEST',
+                'BLOOD GLUCOSE FASTING',
+                'CALCIUM',
+                'HbA1C',
+                'URINE ROUTING & MICROSCOPY',
+                'VITAMIN D',
+                'VITAMIN B12',
+                'IRON PROFILE',
+                'CRP',
+                'RA FACTOR'
+            ]
+        },
+        {
+            name: 'HemoCure Vitamin With Thyroid',
+            price: 1499,
+            features: [
+                'LIPID PROFILE',
+                'LIVER FUNCTION TEST',
+                'COMPLETE BLOOD COUNT (CBC)',
+                'KIDNEY FUNCTION TEST',
+                'BLOOD GLUCOSE FASTING',
+                'CALCIUM',
+                'THYROID PROFILE',
+                'URINE ROUTING & MICROSCOPY',
+                'VITAMIN D',
+                'VITAMIN B12'
+            ]
+        },
+        {
+            name: 'HemoCure Vitamin With HBA1C',
+            price: 1499,
+            features: [
+                'LIPID PROFILE',
+                'LIVER FUNCTION TEST',
+                'COMPLETE BLOOD COUNT (CBC)',
+                'KIDNEY FUNCTION TEST',
+                'BLOOD GLUCOSE FASTING',
+                'CALCIUM',
+                'HBA1C',
+                'URINE ROUTING & MICROSCOPY',
+                'VITAMIN D',
+                'VITAMIN B12'
+            ]
+        },
+
+];
 
 const Packages = () => {
 
     const navigate = useNavigate();
 
-    const packages = [
-        {
-            name: 'HemoCure Basic Health Check',
-            price: '499',
-            testCode: "HC 1.0",
-            features: [
-                'Hemogram',
-                'Lipid Profile',
-                'Liver Function Test',
-                'Kidney Function Test',
-                'Uric Acid',
-                'Calcium'
-            ],
-            description: 'A foundational health screening to assess your general well-being and detect common health issues early.'
-        },
-        {
-            name: 'HemoCure Standard Health Check',
-            price: '799',
-            testCode: "HC 1.1",
-            features: [
-                'Hemogram + ESR',
-                'Lipid Profile',
-                'Liver Function Test',
-                'Kidney Function Test',
-                'Uric Acid',
-                'Calcium',
-                'Thyroid Profile'
-            ],
-            description: 'A comprehensive evaluation of your vital organs, including heart, kidneys, and liver, for a deeper health insight.'
-        },
-        {
-            name: 'HemoCure Premium Health Check',
-            price: '1199',
-            testCode: "HC 1.2",
-            features: [
-                'Hemogram + ESR',
-                'Lipid Profile',
-                'Liver Function Test',
-                'Kidney Function Test',
-                'Uric Acid',
-                'Calcium',
-                'Thyroid Profile',
-                'HbA1c',
-                'Iron Profile'
-            ],
-            description: 'Our most thorough health assessment, covering an extensive range of tests for a complete picture of your health.'
-        },
-        {
-            name: 'Hemocure Premium Health Check + Vitamins',
-            price: '1499',
-            testCode: "HC 1.3",
-            features: [
-                'Hemogram + ESR',
-                'Lipid Profile',
-                'Liver Function Test',
-                'Kidney Function Test',
-                'Uric Acid',
-                'Calcium',
-                'Thyroid Profile',
-                'HbA1c',
-                'Iron Profile',
-                'Vitamin B12',
-                'Vitamin D'
-            ],
-            description: 'A comprehensive package designed to address the specific health needs of women, including cancer screenings.'
-        },
-        {
-            name: 'HemoCure Advance Health Check',
-            price: '1999',
-            testCode: "HC 1.5",
-            features: [
-                'Hemogram + ESR',
-                'Lipid Profile',
-                'Liver Function Test',
-                'Kidney Function Test',
-                'Uric Acid',
-                'Calcium',
-                'Thyroid Profile',
-                'HbA1c',
-                'Iron Profile',
-                'Vitamin B12',
-                'Vitamin D',
-                'CRP Quantitative',
-                'RA Quantitative'
-            ],
-            description: 'A focused health check-up for men, including prostate cancer screening and heart health evaluation.'
-        },
-        
-    ];
-
     const PackageCard = ({ pkg }) => {
-
         return (
             <Card
-
                 sx={{
-                    borderRadius: '1rem',
-                    boxShadow: 3,
-                    transition: 'all 0.3s ease-in-out',
-                    '&:hover': {
-                        boxShadow: 6,
-                        transform: 'scale(1.03)'
-                    },
-                    overflow: 'hidden', // important for the overlay effect
+                    height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
-                    minHeight:{xs:0,md:750}
+                    borderRadius: '1.25rem',
+                    border: '1px solid rgba(32, 53, 80, 0.08)',
+                    background: 'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(240,247,244,0.96) 100%)',
+                    boxShadow: '0 18px 38px rgba(32, 53, 80, 0.12)',
+                    transition: 'all 0.3s ease-in-out',
+                    overflow: 'hidden',
+                    '&:hover': {
+                        boxShadow: '0 24px 48px rgba(32, 53, 80, 0.18)',
+                        transform: 'translateY(-6px)'
+                    }
                 }}
             >
-                {/* Original Card Content */}
                 <CardContent sx={{
-                    padding: '2rem',
-
+                    px: { xs: 2, sm: 2.5 },
+                    py: { xs: 2.5, sm: 3 },
+                    display: 'flex',
+                    flexDirection: 'column',
+                    flex: 1
                 }}>
-                    <Typography variant="h5" component="div" sx={{ fontWeight: 'bold', 
-                        color: '#203550', 
-                        marginBottom: '1rem',
-                         textAlign: 'center',
-                         width:{xs: "16rem", md:'20rem'},
-                         
-                         }}>
+                    <Box sx={{
+                        display: 'inline-flex',
+                        alignSelf: 'center',
+                        px: 1.5,
+                        py: 0.6,
+                        borderRadius: '999px',
+                        backgroundColor: 'rgba(58, 125, 95, 0.12)',
+                        color: '#3A7D5F',
+                        fontWeight: 700,
+                        fontSize: { xs: '0.7rem', sm: '0.8rem' },
+                        mb: 2
+                    }}>
+                        Health Checkup
+                    </Box>
+
+                    <Typography variant="h5" component="div" sx={{
+                        fontWeight: 800,
+                        textAlign: 'center',
+                        lineHeight: 1.25,
+                        minHeight: { xs: '4.5rem', sm: '5rem', md: '5.3rem', lg: '5.8rem' },
+                        fontSize: { xs: '1.08rem', sm: '1.25rem', md: '1.2rem', lg: '1.35rem' },
+                        letterSpacing: '-0.03em',
+                        color: '#203550',
+                        textTransform: 'none',
+                        borderBottom: '1px solid rgba(32, 53, 80, 0.08)',
+                        pb: 1.2,
+                        mb: 0.5,
+                        px: { xs: 0.3, sm: 0.8 },
+                    }}>
                         {pkg.name}
                     </Typography>
-                    <Box sx={{ marginBottom: '1.5rem', textAlign: 'center' }}>
-                        <Typography variant="h4" sx={{ fontWeight: 'bold', color: '#3A7D5F' }}>
+
+                    <Box sx={{
+                        my: 2.5,
+                        textAlign: 'center',
+                        background: 'linear-gradient(135deg, rgba(58,125,95,0.08), rgba(32,53,80,0.03))',
+                        borderRadius: '0.9rem',
+                        py: 1.5,
+                        px: 1
+                    }}>
+                        <Typography variant="h4" sx={{
+                            fontWeight: 800,
+                            color: '#3A7D5F',
+                            fontSize: { xs: '1.7rem', sm: '2.1rem', md: '2.1rem', lg: '2.3rem' }
+                        }}>
                             Rs. {pkg.price}/-
                         </Typography>
-                        <Typography variant="subtitle1" sx={{ fontWeight: 'bold', color: 'rgb(78, 94, 124)' }}>
-                            TestCode : {pkg.testCode}
-                        </Typography>
                     </Box>
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
+
+                    <Box sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 1.25,
+                        mb: 2,
+                        flex: 1
+                    }}>
                         {pkg.features.map((feature, index) => (
-                            <Box key={index} sx={{ display: 'flex', gap: '0.5rem' }}>
-                                <CheckIcon sx={{ color: '#3A7D5F' }} />
+                            <Box key={index} sx={{
+                                display: 'flex',
+                                alignItems: 'flex-start',
+                                gap: 1,
+                                color: 'rgb(78, 94, 124)',
+                            }}>
+                                <CheckIcon sx={{
+                                    color: '#3A7D5F',
+                                    flexShrink: 0,
+                                    mt: '2px',
+                                    fontSize: { xs: '1rem', sm: '1.1rem' }
+                                }} />
                                 <Typography sx={{
                                     color: 'rgb(78, 94, 124)',
-                                    
-                                }}>{feature}</Typography>
+                                    fontSize: { xs: '0.9rem', sm: '0.95rem' },
+                                    fontWeight: 700,
+                                    lineHeight: 1.5,
+                                    wordBreak: 'break-word',
+                                }}>
+                                    {feature}
+                                </Typography>
                             </Box>
                         ))}
                     </Box>
                 </CardContent>
 
-                <Box
-                    sx={{
-                        paddingX: '2rem'
-                    }}
-                >
+                <Box sx={{ px: { xs: 2, sm: 2.5 }, pb: { xs: 2.5, sm: 3 } }}>
                     <Button
                         variant="contained"
                         fullWidth
                         sx={{
-                            fontWeight: 'bold',
-                            padding: '0.8rem',
-                            backgroundColor: '#3A7D5F',
+                            fontWeight: 700,
+                            py: 1.15,
+                            borderRadius: '999px',
+                            background: 'linear-gradient(135deg, #3A7D5F 0%, #264A5D 100%)',
+                            textTransform: 'none',
+                            fontSize: { xs: '0.95rem', sm: '1rem' },
+                            boxShadow: 'none',
                             '&:hover': {
-                                backgroundColor: '#203550'
-                            },
-                            marginBottom: 3
+                                background: 'linear-gradient(135deg, #203550 0%, #3A7D5F 100%)',
+                                boxShadow: '0 10px 20px rgba(32, 53, 80, 0.18)'
+                            }
                         }}
                     >
                         Book Now
@@ -194,32 +282,39 @@ const Packages = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 textAlign: 'center',
-                padding: '4rem 2rem',
+                padding: { xs: '3rem 1rem', md: '4rem 2rem' },
                 backgroundColor: '#f8fafc'
             }}>
-                <Typography variant="h2" component="h1" gutterBottom sx={{
-                    color: '#203550',
-                    fontWeight: 'bold'
-                }}>
-                    Our Health Packages
-                </Typography>
-                <Typography variant="h6" sx={{
-                    color: 'rgb(78, 94, 124)',
-                    maxWidth: '600px',
-                    marginBottom: '3rem'
-                }}>
-                    We offer a variety of health packages to suit your needs. Choose from our basic to comprehensive packages for a full health check-up.
-                </Typography>
+                <Box sx={{ width: '100%', maxWidth: '1280px' }}>
+                    <Typography variant="h2" component="h1" gutterBottom sx={{
+                        color: '#203550',
+                        fontWeight: 800,
+                        fontSize: { xs: '2.3rem', sm: '3rem', md: '4rem' },
+                        lineHeight: 1.12,
+                        mb: 1.5,
+                        fontFamily: 'inherit'
+                    }}>
+                        Our Health Packages
+                    </Typography>
+                    <Typography variant="h6" sx={{
+                        color: 'rgb(78, 94, 124)',
+                        maxWidth: '700px',
+                        margin: '0 auto 3rem auto',
+                        fontSize: { xs: '1rem', sm: '1.1rem', md: '1.2rem' },
+                        lineHeight: 1.7,
+                        fontFamily: 'inherit'
+                    }}>
+                        We offer a variety of health packages to suit your needs. Choose from our basic to comprehensive packages for a full health check-up.
+                    </Typography>
 
-                <Grid container spacing={4} justifyContent="center">
-                    {packages.map((pkg, index) => (
-                        <Grid key={index} xs={12} sm={6} md={4} 
-                        
-                        >
-                            <PackageCard pkg={pkg} />
-                        </Grid>
-                    ))}
-                </Grid>
+                    <Grid container spacing={{ xs: 2, sm: 2.5, md: 2.8, lg: 3 }} justifyContent="center">
+                        {packages.map((pkg, index) => (
+                            <Grid item key={index} xs={12} sm={6} md={4} lg={4} xl={3}>
+                                <PackageCard pkg={pkg} />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Box>
             </Box>
         </Wrapper>
     )

@@ -14,34 +14,33 @@ const Hero = () => {
     const navigate = useNavigate()
 
     return (
-    
-        <div className='flex flex-col lg:flex-row gap-[1rem] relative'>
+      
+        <div className='flex flex-col gap-6 px-4 pt-4 pb-8 md:px-6 lg:flex-row lg:items-center lg:gap-6 lg:px-8'>
             <Box
                 sx={{
                     backgroundImage: "url(" + BG1 + ")",
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
-                    width: { xs: '100%', md: '60%' },
+                    width: { xs: '100%', lg: '58%' },
                     display: "flex",
                     flexDirection: "column",
-                    // justifyContent: "center",
                     alignItems: "start",
                     color: "white",
                     textAlign: "center",
-                    paddingY: '3rem',
-                    paddingX: '2rem',
+                    paddingY: { xs: '2.25rem', md: '2.75rem' },
+                    paddingX: { xs: '1.25rem', md: '2rem' },
                     gap: '1.5rem',
                     borderRadius: '25px',
                 }}
             >
                 <Typography variant="h2" component="h1" gutterBottom
                     sx={{
-                        fontSize: { xs: "2.5rem", md:'3rem',lg:'4rem' },
+                        fontSize: { xs: "2.5rem", sm: '3rem', md: '3.2rem', lg: '4rem' },
                         fontWeight: "bold",
                         textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
                         color: "#203550",
                         textAlign: 'start',
-                        width: { xs: '100%', md: '75%' },
+                        width: { xs: '100%', md: '90%', lg: '75%' },
                     }}
                 >
                     Trusted Clinical Testing For Healthier Lives
@@ -49,23 +48,25 @@ const Hero = () => {
 
                 <Typography variant="h5" component="p"
                     sx={{
-                        fontSize: { xs: "1rem" },
+                        fontSize: { xs: "1rem", md: "1.1rem" },
                         color: 'rgb(78, 94, 124)',
                         textAlign: 'start',
-                        width: { xs: '100%', md: '75%' },
+                        width: { xs: '100%', md: '90%', lg: '75%' },
+                        lineHeight: 1.6,
                     }}
                 >
                     Clinical Pathology Laboratories is dedicated to improving patient outcomes through trusted and reliable medical testing. With advanced technology.
                 </Typography>
 
-                <Stack direction="row" spacing={3}
-                sx={{
-                    width: { xs: '100%', md: '75%' },
-                }}
+                <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}
+                    sx={{
+                        width: { xs: '100%', md: '90%', lg: '75%' },
+                    }}
                 >
                     <Button variant="contained"
-                    onClick={()=>navigate('/packages')}
+                        onClick={()=>navigate('/packages')}
                         sx={{
+                            width: { xs: '100%', sm: 'auto' },
                             '&:hover': {
                                 backgroundColor: 'rgb(78, 94, 124)',
                                 color: 'white',
@@ -73,17 +74,19 @@ const Hero = () => {
                         }}
                     >Our Packages
                     </Button>
-                    <a href="tel:+919814719180">
-                    <Button variant="contained"
-                        sx={{
-                            '&:hover': {
-                                backgroundColor: 'rgb(78, 94, 124)',
-                                color: 'white',
-                            },
-                        }}
-                    >
-                    Call Us
-                    </Button>
+                    <a href="tel:+918146003632" style={{ width: '100%', display: 'block' }}>
+                        <Button variant="contained"
+                            fullWidth
+                            sx={{
+                                width: { xs: '100%', sm: 'auto' },
+                                '&:hover': {
+                                    backgroundColor: 'rgb(78, 94, 124)',
+                                    color: 'white',
+                                },
+                            }}
+                        >
+                            Call Us
+                        </Button>
                     </a>
                 </Stack>
 
@@ -91,61 +94,57 @@ const Hero = () => {
                     display: 'flex',
                     flexDirection: { xs: 'column', lg: 'row' },
                     justifyContent: 'space-between',
-                    alignItems: { xs: 'start', lg: 'center' },
+                    alignItems: { xs: 'flex-start', lg: 'center' },
                     bgcolor: '#DCEEFF',
                     borderRadius: '10px',
-                    gap: '2rem',
+                    gap: { xs: '1rem', lg: '2rem' },
                     padding: '1rem',
-                    width: { xs: '100%', md: '75%',lg:'100%' },
-                    marginTop: {xs:'2rem',lg:'8rem'},
+                    width: { xs: '100%', md: '90%', lg: '100%' },
+                    marginTop: { xs: '1rem', lg: '4rem' },
                 }}>
-                    <div className='flex items-center  gap-4 '>
-                        <div className='bg-white p-2 rounded-full '>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flex: 1 }}>
+                        <Box sx={{ bgColor: 'white', p: 1.2, borderRadius: '999px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <SupportAgentIcon
                                 sx={{
                                     fontSize: '2rem',
                                     color: 'rgb(78, 94, 124)'
                                 }} />
-                        </div>
+                        </Box>
                         <Typography variant='h6' component='p'
                             sx={{
-                                fontSize: { xs: "1rem" },
+                                fontSize: { xs: "0.95rem", md: "1rem" },
                                 color: '#203550',
                                 fontWeight: 'bold',
-                                textAlign: 'start'
+                                textAlign: 'start',
+                                lineHeight: 1.5,
                             }}
                         >
                             We are Ready To Serve You with Pleasure <br className='hidden sm:block' /> And Fast Response
                         </Typography>
-                    </div>
+                    </Box>
 
-                    <div className='flex items-start pl-[0.5rem]'>
-
-                        <a href="tel:+918146003632">
-                        <Button variant="contained"
-                            sx={{
-                                '&:hover': {
-                                    backgroundColor: 'rgb(78, 94, 124)',
-                                    color: 'white',
-                                },
-                            }}
-                        >
-                           Help & Support
-                        </Button>
+                    <Box sx={{ display: 'flex', alignItems: 'center', width: { xs: '100%', lg: 'auto' } }}>
+                        <a href="tel:+918146003632" style={{ width: '100%' }}>
+                            <Button variant="contained"
+                                fullWidth
+                                sx={{
+                                    width: { xs: '100%', lg: 'auto' },
+                                    '&:hover': {
+                                        backgroundColor: 'rgb(78, 94, 124)',
+                                        color: 'white',
+                                    },
+                                }}
+                            >
+                                Help & Support
+                            </Button>
                         </a>
-                    </div>
-
+                    </Box>
                 </Box>
             </Box>
 
-
             <Box
                 sx={{
-                    height: { xs: '100%', md: '54%'},
-                    width: { xs: '100%', md: '50%',lg:'50%' },
-                    position: { xs: 'relative',sm:'static', md: 'absolute', lg: 'static' },
-                    top: { xs: 0, md: '30%', },
-                    left: { xs: 0, md: '46%' },
+                    width: { xs: '100%', lg: '42%' },
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
@@ -155,10 +154,10 @@ const Hero = () => {
                     borderRadius: '25px',
                 }}
             >
-                <img className='rounded-3xl ' src={BG2} alt="" />
+                <img className='w-full rounded-3xl object-cover' src={BG2} alt="Diagnostic care" />
             </Box>
         </div>
-       
+      
     )
 }
 

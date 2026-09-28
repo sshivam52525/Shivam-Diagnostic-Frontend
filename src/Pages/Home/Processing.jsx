@@ -31,25 +31,25 @@ const steps = [
 
 const Processing = () => {
     return (
-        <Box sx={{ backgroundColor: '#f9f9f9',marginTop:'2rem' }}>
+        <Box sx={{ backgroundColor: '#f9f9f9', marginTop: '2rem', py: { xs: 4, md: 6 } }}>
             <Container maxWidth="xl">
-                <Typography variant="h2" component="h1" gutterBottom textAlign="center" sx={{ fontWeight: 'bold', paddingTop:'3rem' }}>
+                <Typography variant="h2" component="h1" gutterBottom textAlign="center" sx={{ fontWeight: 'bold', fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' } }}>
                     Our Sample Processing Workflow
                 </Typography>
-                <Typography variant="h6" color="text.secondary" textAlign="center" sx={{ mb: 6 }}>
+                <Typography variant="h6" color="text.secondary" textAlign="center" sx={{ mb: { xs: 4, md: 6 }, px: 2, lineHeight: 1.6 }}>
                     From collection to analysis, we ensure the highest standards of quality and accuracy.
                 </Typography>
-                <Box sx={{ display: 'flex', justifyContent: 'center', gap: 4, flexWrap: 'wrap' }}>
+                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, minmax(0, 1fr))', xl: 'repeat(4, minmax(0, 1fr))' }, gap: { xs: 2.5, md: 3 } }}>
                     {steps.map((step) => (
-                        <Card key={step.title} sx={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', p: 3, boxShadow: '0 4px 12px 0 rgba(0,0,0,0.05)', flex: '1 1 300px', minWidth: '300px' }}>
+                        <Card key={step.title} sx={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', p: { xs: 2, md: 3 }, boxShadow: '0 4px 12px 0 rgba(0,0,0,0.05)' }}>
                             <Box sx={{ mb: 2 }}>
                                 {step.icon}
                             </Box>
-                            <CardContent sx={{ textAlign: 'center' }}>
-                                <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 'medium' }}>
+                            <CardContent sx={{ textAlign: 'center', p: 0 }}>
+                                <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 'medium', fontSize: { xs: '1.2rem', md: '1.5rem' } }}>
                                     {step.title}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary">
+                                <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7 }}>
                                     {step.description}
                                 </Typography>
                             </CardContent>
