@@ -15,32 +15,38 @@ const Hero = () => {
 
     return (
       
-        <div className='flex flex-col gap-6 px-4 pt-4 pb-8 md:px-6 lg:flex-row lg:items-center lg:gap-6 lg:px-8'>
+        <div className='mx-auto flex w-full max-w-[1440px] min-w-0 flex-col gap-5 px-4 pb-8 pt-4 sm:gap-6 sm:px-6 lg:flex-row lg:items-stretch lg:gap-6 lg:px-8'>
             <Box
                 sx={{
-                    backgroundImage: "url(" + BG1 + ")",
+                    backgroundImage: `linear-gradient(115deg, rgba(240, 247, 255, 0.96), rgba(232, 246, 241, 0.88)), url(${BG1})`,
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
+                    backgroundPosition: 'center',
                     width: { xs: '100%', lg: '58%' },
+                    minWidth: 0,
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: "start",
-                    color: "white",
-                    textAlign: "center",
-                    paddingY: { xs: '2.25rem', md: '2.75rem' },
-                    paddingX: { xs: '1.25rem', md: '2rem' },
-                    gap: '1.5rem',
-                    borderRadius: '25px',
+                    alignItems: "flex-start",
+                    color: "#203550",
+                    textAlign: "left",
+                    paddingY: { xs: '1.75rem', sm: '2.5rem', lg: '3rem' },
+                    paddingX: { xs: '1.25rem', sm: '2rem', lg: '2.5rem' },
+                    gap: { xs: '1.15rem', sm: '1.5rem' },
+                    borderRadius: { xs: '18px', sm: '24px' },
+                    boxSizing: 'border-box',
                 }}
             >
                 <Typography variant="h2" component="h1" gutterBottom
                     sx={{
-                        fontSize: { xs: "2.5rem", sm: '3rem', md: '3.2rem', lg: '4rem' },
+                        fontSize: { xs: "2.15rem", sm: '2.8rem', md: '3.25rem', lg: '3.75rem' },
                         fontWeight: "bold",
-                        textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
                         color: "#203550",
-                        textAlign: 'start',
-                        width: { xs: '100%', md: '90%', lg: '75%' },
+                        textAlign: 'left',
+                        width: '100%',
+                        maxWidth: '14ch',
+                        lineHeight: 1.08,
+                        overflowWrap: 'anywhere',
+                        mb: 0,
                     }}
                 >
                     Trusted Clinical Testing For Healthier Lives
@@ -48,11 +54,12 @@ const Hero = () => {
 
                 <Typography variant="h5" component="p"
                     sx={{
-                        fontSize: { xs: "1rem", md: "1.1rem" },
-                        color: 'rgb(78, 94, 124)',
-                        textAlign: 'start',
-                        width: { xs: '100%', md: '90%', lg: '75%' },
-                        lineHeight: 1.6,
+                        fontSize: { xs: "0.98rem", sm: '1.05rem', md: "1.1rem" },
+                        color: '#4e5e7c',
+                        textAlign: 'left',
+                        width: '100%',
+                        maxWidth: '56ch',
+                        lineHeight: 1.7,
                     }}
                 >
                     Clinical Pathology Laboratories is dedicated to improving patient outcomes through trusted and reliable medical testing. With advanced technology.
@@ -60,13 +67,21 @@ const Hero = () => {
 
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}
                     sx={{
-                        width: { xs: '100%', md: '90%', lg: '75%' },
+                        width: '100%',
+                        maxWidth: '34rem',
+                        '& > *': { minWidth: 0, flex: { xs: '1 1 auto', sm: '0 1 auto' } },
                     }}
                 >
                     <Button variant="contained"
                         onClick={()=>navigate('/packages')}
                         sx={{
                             width: { xs: '100%', sm: 'auto' },
+                            minHeight: 48,
+                            px: 2.5,
+                            whiteSpace: 'nowrap',
+                            backgroundColor: '#203550',
+                            textTransform: 'none',
+                            fontWeight: 700,
                             '&:hover': {
                                 backgroundColor: 'rgb(78, 94, 124)',
                                 color: 'white',
@@ -74,11 +89,15 @@ const Hero = () => {
                         }}
                     >Our Packages
                     </Button>
-                    <a href="tel:+918146003632" style={{ width: '100%', display: 'block' }}>
+                    <a href="tel:+918146003632" style={{ width: '100%', display: 'block', textDecoration: 'none' }}>
                         <Button variant="contained"
                             fullWidth
                             sx={{
-                                width: { xs: '100%', sm: 'auto' },
+                                minHeight: 48,
+                                px: 2.5,
+                                backgroundColor: '#3A7D5F',
+                                textTransform: 'none',
+                                fontWeight: 700,
                                 '&:hover': {
                                     backgroundColor: 'rgb(78, 94, 124)',
                                     color: 'white',
@@ -92,17 +111,19 @@ const Hero = () => {
 
                 <Box sx={{
                     display: 'flex',
-                    flexDirection: { xs: 'column', lg: 'row' },
+                    flexDirection: { xs: 'column', sm: 'row' },
                     justifyContent: 'space-between',
-                    alignItems: { xs: 'flex-start', lg: 'center' },
-                    bgcolor: '#DCEEFF',
+                    alignItems: { xs: 'stretch', sm: 'center' },
+                    bgcolor: 'rgba(255, 255, 255, 0.82)',
                     borderRadius: '10px',
-                    gap: { xs: '1rem', lg: '2rem' },
-                    padding: '1rem',
-                    width: { xs: '100%', md: '90%', lg: '100%' },
-                    marginTop: { xs: '1rem', lg: '4rem' },
+                    border: '1px solid rgba(32, 53, 80, 0.1)',
+                    gap: { xs: '1rem', sm: '1.25rem' },
+                    padding: { xs: '0.85rem', sm: '1rem' },
+                    width: '100%',
+                    marginTop: { xs: '0.25rem', lg: 'auto' },
+                    boxSizing: 'border-box',
                 }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flex: 1 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, flex: 1, minWidth: 0 }}>
                         <Box sx={{ bgColor: 'white', p: 1.2, borderRadius: '999px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <SupportAgentIcon
                                 sx={{
@@ -112,23 +133,29 @@ const Hero = () => {
                         </Box>
                         <Typography variant='h6' component='p'
                             sx={{
-                                fontSize: { xs: "0.95rem", md: "1rem" },
+                                fontSize: { xs: "0.9rem", sm: '0.95rem', md: "1rem" },
                                 color: '#203550',
                                 fontWeight: 'bold',
                                 textAlign: 'start',
                                 lineHeight: 1.5,
+                                overflowWrap: 'anywhere',
                             }}
                         >
                             We are Ready To Serve You with Pleasure <br className='hidden sm:block' /> And Fast Response
                         </Typography>
                     </Box>
 
-                    <Box sx={{ display: 'flex', alignItems: 'center', width: { xs: '100%', lg: 'auto' } }}>
-                        <a href="tel:+918146003632" style={{ width: '100%' }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', width: { xs: '100%', sm: 'auto' }, flexShrink: 0 }}>
+                        <a href="tel:+918146003632" style={{ width: '100%', textDecoration: 'none' }}>
                             <Button variant="contained"
                                 fullWidth
                                 sx={{
-                                    width: { xs: '100%', lg: 'auto' },
+                                    minHeight: 46,
+                                    px: 2,
+                                    backgroundColor: '#203550',
+                                    whiteSpace: 'nowrap',
+                                    textTransform: 'none',
+                                    fontWeight: 700,
                                     '&:hover': {
                                         backgroundColor: 'rgb(78, 94, 124)',
                                         color: 'white',
@@ -145,16 +172,19 @@ const Hero = () => {
             <Box
                 sx={{
                     width: { xs: '100%', lg: '42%' },
+                    minWidth: 0,
+                    minHeight: { xs: 240, sm: 320, lg: 0 },
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
                     color: "white",
                     textAlign: "center",
-                    borderRadius: '25px',
+                    borderRadius: { xs: '18px', sm: '24px' },
+                    overflow: 'hidden',
                 }}
             >
-                <img className='w-full rounded-3xl object-cover' src={BG2} alt="Diagnostic care" />
+                <img className='h-full min-h-[240px] w-full object-cover sm:min-h-[320px] lg:min-h-0' src={BG2} alt="Diagnostic care" />
             </Box>
         </div>
       
