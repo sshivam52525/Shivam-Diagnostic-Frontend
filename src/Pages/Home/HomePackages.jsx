@@ -4,7 +4,8 @@ import Typography from '@mui/material/Typography';
 import { Button, Card, CardContent, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import CheckIcon from '@mui/icons-material/Check';
-import { packages as packageData } from '../Packages';
+import { packages as packageData } from '../packageData';
+import { openWhatsAppForPackage } from '../../utils/whatsapp';
 
 const HomePackages = () => {
     const navigate = useNavigate();
@@ -118,7 +119,7 @@ const HomePackages = () => {
                     <Button
                         variant="contained"
                         fullWidth
-                        onClick={() => navigate('/packages')}
+                        onClick={() => openWhatsAppForPackage(pkg)}
                         sx={{
                             fontWeight: 700,
                             py: 1.15,
